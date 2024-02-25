@@ -9,6 +9,7 @@ function notEmpty(input, text, msg) {
         text.innerText = msg;
         return false;
     }
+    text.innerText = "";
     return true;
 }
 
