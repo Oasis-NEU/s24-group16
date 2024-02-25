@@ -22,6 +22,6 @@ form.addEventListener("submit", function(event) {
     let passwordValid = notEmpty(form.elements["inputPassword"], passwordWarning, "Please enter something.");
 
     if (emailValid && passwordValid) {
-        console.log("success") // actual behavior here
+        console.log("success") // actual behavior here, input into database?
     }
 })
