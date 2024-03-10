@@ -1,3 +1,37 @@
+<?php
+
+print_r($_POST);
+
+$is_invalid = false;
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $mysqli = require __DIR__ . "/database.php";
+
+    $sql = sprintf("SELECT * FROM login
+                    WHERE email = '%s'",
+                    $mysqli->real_escape_string($_POST["email"]));
+
+    $result = $mysqli->query($sql);
+
+    $user = $result->fetch_assoc();
+
+    if ($user) {
+        if (password_verify($_POST["password"], $user["password_hash"])) {
+            session_start();
+
+            session_regenerate_id();
+
+            $_SESSION["user_id"] = $user["email"];
+
+            header("Location: YourClasses.html");
+            exit;
+        }
+    }
+
+    $is_invalid = true;
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -46,15 +80,16 @@
         <section class="text-light p-5">
             <h1 class="mb-4 text-center">Log In</h1>
             <div style="width: 50%" class="d-flex flex-column align-items-center container justify-content-center">
-            <form id="login">
+            <form method="post">
                 <div class="mb-3 mt-3">
                   <label for="exampleInputEmail" class="form-label"><strong>Email address</strong></label>
-                  <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="inputEmail" name="email" aria-describedby="emailHelp"
+                  value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
                 </div>
                 <p><span id="emailWarning"></span></p>
                 <div class="mb-3">
                   <label for="exampleInputPassword" class="form-label"><strong>Password</strong></label>
-                  <input type="password" class="form-control" id="inputPassword">
+                  <input type="password" class="form-control" id="inputPassword" name="password">
                 </div>
                 <p><span id="passwordWarning"></span></p>
                 <div class="d-flex flex-column align-items-center">
