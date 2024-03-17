@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="Login.html" class="nav-link">
+                        <a href="Login.php" class="nav-link">
                             Login
                         </a>
                     </li>
