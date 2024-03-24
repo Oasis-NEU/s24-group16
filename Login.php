@@ -1,7 +1,5 @@
 <?php
 
-print_r($_POST);
-
 $is_invalid = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
