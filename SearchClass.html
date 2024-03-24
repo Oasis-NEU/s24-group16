@@ -84,7 +84,7 @@
 
 <body>
 
-<form method="post">
+<form action = "process-searchclass.php", method="post" id = "searchclass">
 <label>Search</label>
 <input type="text" name="search">
 <input type="submit" name="submit">	
@@ -93,41 +93,3 @@
 </body>
 </html>
 
-<?php
-
-$con = new PDO("mysql:host=localhost;dbname=study-buddy",'root','NeWPassY7!0$%');
-
-if (isset($_POST["submit"])) {
-	$str = $_POST["search"];
-	$sth = $con->prepare("SELECT * FROM `class` WHERE title = '$str'");
-
-	$sth->setFetchMode(PDO:: FETCH_OBJ);
-	$sth -> execute();
-
-	if($row = $sth->fetch())
-	{
-		?>
-		<br><br><br>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Description</th>
-			</tr>
-			<tr>
-				<td><?php echo $row->title; ?></td>
-				<td><?php echo $row->classdescription;?></td>
-			</tr>
-
-		</table>
-<?php 
-	}
-		
-		
-		else{
-			echo "Name Does not exist";
-		}
-
-
-}
-
-?>
