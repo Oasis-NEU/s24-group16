@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<head>
         <title>
             Study Buddy Networking App
         </title>
@@ -35,28 +33,73 @@
             </div>
             </div>
         </nav>
-        <section class="text-light p-5">
-            <h1 class="mb-4 text-center">Make New Class</h1>
-            <div style="width: 50%" class="container justify-content-center">
-            <form action="process-addclass.php"  method="post" id="signup" novalidate>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Course ID</label>
-                    <input type="number" class="form-control" id="id" name="id">
-                  </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Description</label>
-                  <input type="text" class="form-control" id="classdescription" name="classdescription">
-                </div>
-                <button type="submit" class="btn btn-primary bg-primary mt-3 text-center">Create</button>
-              </form>
-            </div>
-        </section>
+         <?php 
+    $mysqli = require __DIR__ . "/database.php";
 
+    if($mysqli->connect_error){
+      die("Connection failed: " . $mysqli->connect_error);
+    }
 
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    $sql = "SELECT * FROM class";
+
+    $result = $mysqli->query($sql);
+    if (!$result){
+      die("Error in SQL query: " . $mysqli->error);
+    }
+
+    $users = $result->fetch_all(MYSQLI_ASSOC); // Fetch all rows as associative array
+
+    $mysqli->close(); // Close the database connection
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1>Add Class</h1>
+
+<table id="customers">
+<tr>
+    <th> Course Number</th>
+    <th> Title </th>
+    <th> Description </th>
+    <th> Add </th>
+</tr>
+<?php foreach ($users as $user): ?>
+    <tr>
+        <td><?php echo $user['class_id'] ?></td>
+        <td><?php echo $user['title'] ?></td>
+        <td><?php echo $user['classdescription'] ?></td>
+        <td><a href="#" class="btn btn-danger">Add</a></td>
+    </tr>
+<?php endforeach; ?>     
+</table>
+                                    
+</body>
 </html>
