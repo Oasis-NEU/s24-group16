@@ -103,7 +103,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="SearchClass.php" class="nav-link">
+                        <a href="FindClasses.php" class="nav-link">
                             Find Classes
                         </a>
                     </li>
