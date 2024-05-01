@@ -1,7 +1,5 @@
 <?php
 
- print_r($_POST);
-
 $mysqli = require __DIR__ . "/database.php";
 
 $sql = "INSERT INTO profile (email, first_name, last_name, major, grade, bio, instagram)

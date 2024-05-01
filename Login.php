@@ -1,7 +1,5 @@
 <?php
 
-print_r($_POST);
-
 $is_invalid = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -54,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="Login.html" class="nav-link">
+                        <a href="Login.php" class="nav-link">
                             Login
                         </a>
                     </li>
@@ -64,12 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#yourClasses" class="nav-link">
+                        <a href="YourClasses.html" class="nav-link">
                             Your Classes
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#findClasses" class="nav-link">
+                        <a href="SearchClass.php" class="nav-link">
                             Find Classes
                         </a>
                     </li>

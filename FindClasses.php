@@ -66,16 +66,24 @@
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="Login.html" class="nav-link">Login</a>
+                        <a href="Login.php" class="nav-link">
+                            Login
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="ViewProfile.html" class="nav-link">Profile</a>
+                        <a href="ViewProfile.html" class="nav-link">
+                            Profile
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="YourClasses.html" class="nav-link">Your Classes</a>
+                        <a href="YourClasses.html" class="nav-link">
+                            Your Classes
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="FindClasses.html" class="nav-link">Find Classes</a>
+                        <a href="FindClasses.php" class="nav-link">
+                            Find Classes
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -83,7 +91,7 @@
     </nav>
 
     <div id="search">
-        <form role="search" id="form">
+        <form role="search" id="form" method="post">
             <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
             <button>
                 <svg viewBox="0 0 1024 1024">
@@ -95,15 +103,15 @@
     <script>
         const f = document.getElementById('form');
         const q = document.getElementById('query');
-        const google = 'https://www.google.com/search?q=site%3A+';
-        const site = 'http://127.0.0.1:5500/static/html/YourClasses.html';
+        //const google = 'https://www.google.com/search?q=site%3A+';
+        //const site = 'http://127.0.0.1:5500/static/html/YourClasses.html';
 
-        function submitted(event) {
-            event.preventDefault();
-            const url = google + site + '+' + q.value;
-            const win = window.open(url, '_blank');
-            win.focus();
-        }
+        //function submitted(event) {
+            //event.preventDefault();
+            //const url = google + site + '+' + q.value;
+            //const win = window.open(url, '_blank');
+            //win.focus();
+        //}
 
         f.addEventListener('submit', submitted);
     </script>
@@ -113,3 +121,44 @@
 </script>
 
 </html>
+
+<?php
+
+$con = new PDO("mysql:host=localhost;dbname=study-buddy",'root','NeWPassY7!0$%');
+
+if (isset($_POST["submit"])) {
+	$str = $_POST["search"];
+	$sth = $con->prepare("SELECT * FROM `class` WHERE title = '$str'");
+
+	$sth->setFetchMode(PDO:: FETCH_OBJ);
+	$sth -> execute();
+
+	if($row = $sth->fetch())
+	{
+		?>
+        <html>
+		<br><br><br>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><?php echo $row->title; ?></td>
+				<td><?php echo $row->classdescription;?></td>
+			</tr>
+
+		</table>
+        </html>
+<?php 
+	}
+		
+		
+		else{
+			echo "Name Does not exist";
+		}
+
+
+}
+
+?>
