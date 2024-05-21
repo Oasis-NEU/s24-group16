@@ -124,6 +124,7 @@
 
 <?php
 
+//PDO -> Php data objects
 $con = new PDO("mysql:host=localhost;dbname=study-buddy",'root','NeWPassY7!0$%');
 
 if (isset($_POST["submit"])) {

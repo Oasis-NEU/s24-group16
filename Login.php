@@ -1,5 +1,6 @@
 <?php
 
+//If the method is Post (The form method does this) Execute the following code
 $is_invalid = false;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
