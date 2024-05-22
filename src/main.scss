@@ -1,0 +1,23 @@
+$custom-colors: (
+    "theme-blue": #86DBFF,
+    "theme-white": #ffffff,
+    "theme-yellow": #F7FF9A,
+    "theme-orange": #FEAD76,
+    "theme-black": black
+);
+
+$primary: blue;
+
+.gradient-custom {
+    background: #F7FF9A;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, #86DBFF, #ffffff, #F7FF9A, #FEAD76);
+  
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, #86DBFF, #ffffff, #F7FF9A, #FEAD76);
+}
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+//include Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
