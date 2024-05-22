@@ -6,6 +6,15 @@
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, #86DBFF, white, #F7FF9A, #FEAD76);
 }
+
+/* <uniquifier>: Use a unique and descriptive class name*/
+/* <weight>: Use a value from 300 to 700*/
+.font-primary {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
