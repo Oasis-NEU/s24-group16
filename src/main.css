@@ -11981,3 +11981,19 @@ textarea.form-control-lg {
     display: none !important;
   }
 }/*# sourceMappingURL=main.css.map */
+
+.layered-images {
+  position: relative;
+}
+
+.layered-images img {
+  position: absolute;
+}
+
+.layered-images img:nth-child(1) {
+  z-index: 3;
+}
+
+.layered-images img:nth-child(2) {
+  z-index: 2;
+}
