@@ -12019,18 +12019,24 @@ textarea.form-control-lg {
   }
 }/*# sourceMappingURL=main.css.map */
 
-.layered-images {
-  position: relative;
-}
-
-.layered-images img {
+.overlay-content::before {
+  content: "";
   position: absolute;
+  background-image: url('img/Login1.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 50px;
+  z-index: 0;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 100%;
 }
 
-.layered-images img:nth-child(1) {
-  z-index: 3;
-}
-
-.layered-images img:nth-child(2) {
-  z-index: 2;
+/* Overlay content */
+.overlay-content {
+  z-index: 1;
+  color: black;
+  width: 50%; /* Adjust width as needed */
+  height: 80%;
+  border-radius: 50px;
 }
