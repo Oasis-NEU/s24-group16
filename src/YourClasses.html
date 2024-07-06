@@ -1,88 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Study Buddy Networking App
-        </title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-3">
-            <div class="container">
-            <a href="#" class="navbar-brand">Study Buddy Networking App</a>
-            
-            <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navmenu">
+
+<head>
+    <title>
+        Study Buddy Networking App
+    </title>
+    <link href="main.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
+    </style>
+</head>
+
+<body style="overflow-x: hidden; overflow-y: hidden;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm py-4">
+        <div class="container font-secondary">
+            <div class="row align-items-center">
+                <img class="col-4 font-primary" src="img/StudyBuddyIcon.png" style="width: 110px;">
+                <span class="col-4"><a href="#" class="navbar-brand font-primary"
+                        style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <div class="collapse navbar-collapse" id="navmenu">
+
+            <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a href="Login.php" class="nav-link">
                             Login
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a href="ViewProfile.html" class="nav-link">
                             Profile
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a href="YourClasses.html" class="nav-link">
                             Your Classes
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="FindClasses.php" class="nav-link">
+                    <li class="nav-item mx-2">
+                        <a href="SearchClass.php" class="nav-link">
                             Find Classes
                         </a>
                     </li>
                 </ul>
             </div>
-            </div>
-        </nav>
-        <section class="d-flex flex-row text-light" style="background-color: #384047">
-            <div width="30%" class="d-flex px-3 py-3 flex-column" style="background-color: #2d3339">
-                <button type="button" class="btn text-light px-3 py-3" style="background-color: #212529">
-                Fundamentals of 
-                <br/>
+        </div>
+    </nav>
+    <!--Content-->
+    <section class="d-flex" style="width: 100vw; height: 86vh;">
+        <div class="d-flex py-3 flex-column" style="background-color: #FEAD76; width: 20vw; 
+            padding-left: 2vw; padding-right: 2vw;">
+            <button type="button" class="mt-4 btn py-3" style="background-color: white; border-radius: 25px;">
+                Fundamentals of
+                <br />
                 Computer Science 2
-                </button>
-                <button type="button" class="btn text-light mt-3 px-3 py-3" style="background-color: #212529">
-                    Mathematics of
-                    <br/>
-                    Data Models
-                    </button>
-            </div>
-            <div class="flex-fill mt-5 text-center">
-                <h1 class="mb-5">Fundamentals of Computer Science 2</h1>
-                <p>This class is an introduction to advanced programming concepts.
-                    <br/>
-                    The class is taught in Java and uses a custom image library.
+            </button>
+            <button type="button" class="btn mt-4 py-3" style="background-color: white; border-radius: 25px;">
+                Mathematics of
+                <br />
+                Data Models
+            </button>
+        </div>
+        <div class="flex-column d-flex align-items-center justify-content-center"
+            style="background-color: #E37D37; width: 85vw;">
+            <div class="flex-column" 
+            style="background-color: white; width: 80%; height: 85%; border-radius: 50px; padding-top:8vh">
+                <div class="text-center">
+                <h2 class="font-primary">Fundamentals of Computer Science II</h2>
+                <p style="margin-top: 5vh">This class is an introduction to advanced programming concepts.
+                    <br />This class is taught in Java and uses a custom image library.
                 </p>
-                <h4 class="my-5">Classmates looking for buddies</h4>
-                <div class="" style="background-color: #4f5a64">
-                    <ul style="list-style-type: none;">
-                        <li>Fred</li>
-                        <li>Jeff</li>
-                        <li>Jeffa</li>
-                        <li>Squishy</li>
-                        <li>Kasper</li>
-                        <li>Steve</li>
-                        <li>Sans</li>
-                        <li>Alexis</li>
-                        <li>Jeff Again</li>
-                        <li>Sonic</li>
-                        <li>Shadow</li>
-                    </ul>
-                
                 </div>
+
+                <p style="margin-left:5vw; margin-top: 5vh;">
+                    Classmates looking for buddies:
+                </p>
             </div>
 
-        </section>
+            <div class="flex-column" 
+            style="background-color: white; width: 80%; height: 85%; border-radius: 50px; padding-top:8vh">
+                <div class="text-center">
+                <h2 class="font-primary">Fundamentals of Computer Science II</h2>
+                <p style="margin-top: 5vh">This class is an introduction to advanced programming concepts.
+                    <br />This class is taught in Java and uses a custom image library.
+                </p>
+                </div>
 
-    </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+                <p style="margin-left:5vw; margin-top: 5vh;">
+                    Classmates looking for buddies:
+                </p>
+            </div>
+
+            
+        </div>
+
+    </section>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
 </html>
