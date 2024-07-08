@@ -12020,31 +12020,9 @@ textarea.form-control-lg {
   }
 }/*# sourceMappingURL=main.css.map */
 
-.overlay-content::before {
-  content: "";
-  position: absolute;
-  background-image: url('img/Login1.jpg');
-  background-size: cover;
-  border-radius: 50px;
-  z-index: 0;
-  transform: translateX(-125%);
-  width: 100%;
-  height: 100%;
-}
-
-/* Overlay content */
-.overlay-content {
-  z-index: 1;
-  color: black;
-  width: 50%; /* Adjust width as needed */
-  height: 80%;
-  border-radius: 50px;
-  transform-origin: 0% 50%;
-}
-
 .login-background-image {
   z-index: 0;
-  background-image: url('img/Login1.jpg');
+  background-image: url('../img/Login1.jpg');
   background-size: cover;
   border-radius: 50px;
   transform: translateX(12%);
