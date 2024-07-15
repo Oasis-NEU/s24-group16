@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     //Embeds the database code into this file and executes it within the current script (at this line)
     //The database.php file returns the MySQL database connection object
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = require __DIR__ . "/../database.php";
 
     //using sprintf to format the SQL command, %s is the placeholder for the second arg
     //$mysqli->real_escape_string() is used to escape special characters in the $_POST["email"] value
@@ -31,13 +31,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_regenerate_id();
 
             //Stores the email in a session variable for tracking the user.
-            $_SESSION["user_id"] = $user["email"];
+            $_SESSION["email"] = $user["email"];
 
             //Redirects user to YourClasses.html
             header("Location: YourClasses.html");
+
             exit;
         }
     }
 
     $is_invalid = true;
+
 }

@@ -53,9 +53,9 @@
         </div>
         </div>
     </nav>
-    <!--Content-->
+    <!--Content (maybe add functionality to delete sometime?)-->
     <div class="text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
-        <form action="process-editprofile.php" method="post" id="profile" novalidate>
+        <form action="process/process-editprofile.php" method="post" id="profile" novalidate>
 
             <div class="d-flex justify-content-center align-items-center"
                 style="height: 86vh; width: 100vw; position: absolute;">

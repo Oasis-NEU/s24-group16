@@ -26,7 +26,7 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 //require executes database.php
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = require __DIR__ . "/../database/database.php";
 
 //command to insert value into database.php
 $sql = "INSERT INTO login (email, password_hash)
@@ -57,4 +57,8 @@ if ($stmt->execute()) {
     }
     die($mysqli->error . " " . $mysqli->errno);
 }
+
+$_SESSION = $_POST["email"];
+
+
 ?>

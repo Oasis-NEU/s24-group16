@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,40 +56,28 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-3">
-        <div class="container">
-            <a href="#" class="navbar-brand">Study Buddy Networking App</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+    <nav class="navbar navbar-expand-sm" style="padding-top: 4vh; padding-bottom: 4vh;">
+            <div class="container font-secondary">
+            <div class="row align-items-center">
+                <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw;">
+                <span class="col-4"><a href="#" class="navbar-brand font-primary" style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
+            </div>
+            
+            <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navmenu">
+            
+            <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="Login.php" class="nav-link">
-                            Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="ViewProfile.html" class="nav-link">
-                            Profile
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="YourClasses.html" class="nav-link">
-                            Your Classes
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="FindClasses.php" class="nav-link">
-                            Find Classes
-                        </a>
-                    </li>
+                    <li class="nav-item mx-2">
+                        <?php
+                        include 'display-navbar.php';
+                        ?>
                 </ul>
             </div>
-        </div>
-    </nav>
+            </div>
+        </nav>
 
     <div id="search">
         <form role="search" id="form" method="post">

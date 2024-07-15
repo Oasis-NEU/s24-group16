@@ -1,7 +1,7 @@
 <?php
 
 //execute database.php
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = require __DIR__ . "/../database/database.php";
 
 //prepare the sql command
 $sql = "INSERT INTO profile (first_name, last_name, year, major, contacts, looking_for, bio)

@@ -28,25 +28,9 @@
             <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-2">
-                        <a href="Login.php" class="nav-link">
-                            Login
-                        </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="ViewProfile.html" class="nav-link">
-                            Profile
-                        </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="YourClasses.html" class="nav-link">
-                            Your Classes
-                        </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a href="SearchClass.php" class="nav-link">
-                            Find Classes
-                        </a>
-                    </li>
+                        <?php
+                        include 'display-navbar.php';
+                        ?>
                 </ul>
             </div>
             </div>

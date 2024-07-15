@@ -1,28 +1,39 @@
+<?php
+session_start();
+
+//execute database.php
+$mysqli = require __DIR__ . "/database.php";
+
+if ($_SERVER["REQUEST-METHOD"] == "POST") {
+    $search = $_POST["search"];
+
+    $query = "SELECT * FROM class 
+    WHERE UPPER(name) LIKE UPPER('%?%')";
+
+    $stmt = $mysqli->stmt_init();
+
+    if (!$stmt->prepare($sql)) {
+        die("SQL error: " . $mysqli->error);
+    }
+
+    $stmt->bind_param("s", $search);
+
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Buddy Networking App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>
+        Study Buddy Networking App
+    </title>
+    <link href = "../static/styles/main.css" rel="stylesheet">
+
     <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .container-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container-bottom {
-            display: flex;
-            justify-content: bottom;
-            align-items: bottom;
-            height: 100vh;
+        #search {
+            background-color: #3745c2;
+            margin: 200px 40%;
         }
 
         form {
@@ -33,130 +44,80 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            padding: 10px;
         }
 
-        input[type="text"] {
+        input {
             all: unset;
             font: 16px system-ui;
             color: #fff;
-            flex = 1;
-            border-radius: 5px;
-            border: none;
-            padding: 8px;
-            background-color: transparent;
+            height: 100%;
+            width: 100%;
+            padding: 6px 10px;
         }
 
-        input[type="text"]::placeholder {
+        ::placeholder {
             color: #fff;
-            opacity:0.7;
+            opacity: 0.7;
         }
 
         button {
             all: unset;
             cursor: pointer;
-            width: 150px;
+            width: 44px;
             height: 44px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #6c757d;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #495057;
-        }
-
-        label {
-            color: #fff;
-            margin-right: 8px;
         }
     </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark py-3">
-        <div class="container">
-            <a href="#" class="navbar-brand">Study Buddy Networking App</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+    <nav class="navbar navbar-expand-sm" style="padding-top: 4vh; padding-bottom: 4vh;">
+            <div class="container font-secondary">
+            <div class="row align-items-center">
+                <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw;">
+                <span class="col-4"><a href="#" class="navbar-brand font-primary" style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
+            </div>
+            
+            <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navmenu">
+            
+            <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="Login.php" class="nav-link">
-                            Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="ViewProfile.html" class="nav-link">
-                            Profile
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="YourClasses.html" class="nav-link">
-                            Your Classes
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="FindClasses.php" class="nav-link">
-                            Find Classes
-                        </a>
-                    </li>
+                    <li class="nav-item mx-2">
+                        <?php
+                        include 'display-navbar.php';
+                        ?>
                 </ul>
             </div>
-        </div>
-    </nav>
+            </div>
+        </nav>
 
-    <div class="container container-center">
-        
+<form action = "process/process-searchclass.php", method="post" id = "searchclass">
+    <label>Search for your class:</label>
+    <input type="text" name="search" placeholder="Search...">
+    <button>Search</button>
+</form>
+<div name="result">
+        <?php
 
-    </body>
+        if (empty($results)) {
+            echo 'That class does not exist.';
+        } else {
+            foreach ($results as $val) {
+                echo '<div>';
+                echo htmlspecialchars($val['name']);
+                echo '</div>';
+                //Note: htmlspecialchars helps to 
+                //prevent users from inputting javascript
+                //and executing it in our website
+            }
+        }
 
-    <form method="post">
-    <label for="search">Search</label>
-    <input type="text" id="search" name="search" placeholder="Find your classes">
-    <input type="submit" name="submit">	
-    </form>
+        ?>
+</div>
+
+</body>
 </html>
 
-<?php
-
-$con = new PDO("mysql:host=localhost;dbname=study-buddy",'root','NeWPassY7!0$%');
-
-if (isset($_POST["submit"])) {
-	$str = $_POST["search"];
-	$sth = $con->prepare("SELECT * FROM `class` WHERE title = '$str'");
-
-	$sth->setFetchMode(PDO:: FETCH_OBJ);
-	$sth -> execute();
-
-	if($row = $sth->fetch())
-	{ 
-        ?>
-         <div class="container container-bottom">
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td><?php echo $row->title; ?></td>
-                <td><?php echo $row->classdescription;?></td>
-            </tr>
-
-        </table>
-    </div>
-
-	<?php
-        }	
-		else{
-			echo "Name Does not exist";
-		}
-}
-
-?>
