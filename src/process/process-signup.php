@@ -23,11 +23,35 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
     die("Passwords must match");
 }
 
-//creates a password hash
-$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
 //require executes database.php
 $mysqli = require __DIR__ . "/../database/database.php";
+
+
+if ($_POST["email"]) {
+    $sql = "SELECT 1 FROM profile WHERE email = ?";
+
+    $stmt = $mysqli->stmt_init();
+
+    if ( ! $stmt->prepare($sql)) {
+        die("SQL error: " . $mysqli->error);
+    }
+
+    $stmt->bind_param("s", $_POST["email"]);
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    $row = $result->fetch_assoc();
+
+    if ($row[1] == 1) {
+        header("Location: ../Signup.php?message=" . urlencode("already existing"));
+        exit();
+    }
+}
+
+//creates a password hash
+$password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 //command to insert value into database.php
 $sql = "INSERT INTO profile (email, password_hash)

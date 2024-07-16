@@ -5,14 +5,22 @@ function prepareBindExecute($value) {
 
     $stmt = $mysqli->stmt_init();
 
-    $sql = "SELECT ? FROM profile WHERE email=?";
+    $sql = "SELECT " . $value . " FROM profile WHERE email = ?";
 
     if (!$stmt->prepare($sql)) {
         die("SQL error: " . $mysqli->error);
     }
 
-    $stmt->bind_param("ss", $value, $_SESSION["email"]);
-    return $stmt->execute();
+    $stmt->bind_param("s", $_SESSION["email"]);
+
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    $row = $result->fetch_assoc();
+
+    
+    return $row[$value];
 }
 
 //Getters make it easier for front-end to use since
@@ -29,6 +37,11 @@ function getLastName() {
 function getYear() {
     echo prepareBindExecute('year', $_SESSION["email"]);
 }
+
+function getMajor() {
+    echo prepareBindExecute('major', $_SESSION["email"]);
+}
+
 
 function getContacts() {
     echo prepareBindExecute('contacts', $_SESSION["email"]);

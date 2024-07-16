@@ -11,11 +11,14 @@ session_start();
             if (isset($_GET['message'])) {
                 $message = htmlspecialchars($_GET['message']);
                 if ($message == 'no account') {
+                    $text = "You don't have an account with us. Create one today!";
+                } else if ($message == 'already existing') {
+                    $text = "You already have an account! Please go to Login.";
+                }
                     echo "<div class='text-center' style='color: black; background-color: white; width: 40vw; 
                     margin: auto; padding-top: 10px; padding-bottom: 10px; margin-bottom: 30px; border-radius: 50px; margin-top: 30px;'>
-                    You don't have an account with us. Create one today! 
+                    " . $text . "
                     </div>";
-                }
             }
         ?>
         <div class="d-flex justify-content-center" style="width: 100vw;">

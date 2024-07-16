@@ -16,14 +16,14 @@
                     <div class="d-flex flex-row"
                         style="justify-content:left; margin-left: 15%; margin-top:2%;">
                         <!--Button 1-->
-                        <div class="about-btn btn btn-theme-blue font-primary" >
+                        <a href="Signup.php"><button class="about-btn btn btn-theme-blue font-primary" style="border-radius: 100px;">
                         Sign Up
-                        </div>
+                        </button></a>
                         <!--Button 2-->
-                        <div class="about-btn btn btn-theme-orange font-primary"
-                        style="margin-left: 2%;">
+                        <a href="Login.php"><button class="about-btn btn btn-theme-orange font-primary"
+                        style="margin-left: 1vw; border-radius: 100px;">
                         Login
-                        </div>
+                        </button></a>
                     </div> 
                 </div>
                 <img src="../static/img/About1.jpg"/>

@@ -1,9 +1,9 @@
 <?php
 
 //execute database.php
-$mysqli = require __DIR__ . "/../database.php";
+$mysqli = require __DIR__ . "/../database/database.php";
 
-$sql = sprintf("SELECT email FROM profile WHERE email='?'", $mysqli);
+$sql = sprintf("SELECT email FROM profile WHERE email=?", $mysqli);
 
 //create the statement using the MySQL connection object
 $stmt = $mysqli->stmt_init();

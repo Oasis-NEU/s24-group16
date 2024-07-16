@@ -11,10 +11,22 @@ include_once __DIR__ . '/navbar.php';
             style="height: 86vh; width: 100vw; position: absolute;">
 
             <div class="bg-white view-profile-box font-primary text-center" style="width: 20vw; padding-top: 5vh;">
-                <h1 style="font-size: 6vh;"><?php getFirstName(); echo " "; getLastName() ?></h1>
-                <p class="view-profile-font-sizing" style="margin-top:5vh;">## year [major] student</p>
-                <p class="view-profile-font-sizing" style="margin-top:10vh;">Contacts:</p>
-                <div style="height: 20vh;">
+                <h1 style="font-size: 6vh;">
+                    <?php 
+                    getFirstName(); 
+                    echo " "; 
+                    getLastName(); 
+                    ?>
+                    </h1>
+                <p class="view-profile-font-sizing" style="margin-top:5vh;">
+                    year <?php getYear(); echo " "; getMajor(); ?> student
+                </p>
+                <p class="view-profile-font-sizing" style="margin-top:10vh;">Contacts:
+                    <div class="view-profile-font-sizing">
+                        <?php getContacts(); ?>
+                    </div>
+                </p>
+                <div style="height: 8vh;">
                 </div>
                 <a href="EditProfile.php">
                     <button class="btn btn-theme-orange" style="border-radius: 50px; font-size: 3vh;">Edit Profile</button>
@@ -24,11 +36,14 @@ include_once __DIR__ . '/navbar.php';
             <div class="bg-white view-profile-box font-primary" style="width: 40vw; 
             margin-left: 5vw; padding-top: 7vh; padding-left: 5vw;">
                 <p class="view-profile-font-sizing">Looking for a buddy that:</p>
-                <div style="height: 20vh;">
-
+                <div class="view-profile-font-sizing" style="height: 20vh;">
+                    <?php getLookingFor(); ?>
                 </div>
                 <p class="view-profile-font-sizing">
                     Bio:
+                    <div class="view-profile-font-sizing">
+                        <?php getBio(); ?>
+                    </div>
                 </p>
                 <div style="height: 20vh;">
 

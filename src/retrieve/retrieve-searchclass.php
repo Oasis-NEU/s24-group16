@@ -2,7 +2,7 @@
 
 
 //execute database.php
-$mysqli = require __DIR__ . "/../database.php";
+$mysqli = require __DIR__ . "/../database/database.php";
 
 if ($_SERVER["REQUEST-METHOD"] == "POST") {
     $search = $_POST["search"];
