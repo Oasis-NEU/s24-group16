@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
+include_once __DIR__ . '/navbar.php';
+?>
 
-<head>
-    <title>
-        Study Buddy Networking App
-    </title>
-    <link href = "../static/styles/main.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
-    </style>
-</head>
-
-<body style="overflow-x: hidden;">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm" style="padding-top: 4vh; padding-bottom: 4vh;">
-        <div class="container font-secondary">
-        <div class="row align-items-center">
-            <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw;">
-            <span class="col-4"><a href="#" class="navbar-brand font-primary" style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
-        </div>
-        
-        <button class="navbar-toggler" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navmenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-2">
-                    <a href="Login.php" class="nav-link">
-                        Login
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="ViewProfile.html" class="nav-link">
-                        Profile
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="YourClasses.html" class="nav-link">
-                        Your Classes
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="SearchClass.php" class="nav-link">
-                        Find Classes
-                    </a>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
     <!--Content (maybe add functionality to delete sometime?)-->
     <div class="text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
         <form action="process/process-editprofile.php" method="post" id="profile" novalidate>
@@ -65,13 +15,13 @@
                     <div class="view-profile-font-sizing">
                     <div class="container justify-content-center" style="width: 80%; margin-top: 3vh;">
                         <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" name="first-name"
+                        <input type="text" class="form-control" name="first_name"
                             style="border-radius: 100px; height: 5vh;">
                     </div>
 
                     <div class="container justify-content-center" style="width: 80%; margin-top: 3vh;">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" name="last-name"
+                        <input type="text" class="form-control" name="last_name"
                             style="border-radius: 100px; height: 5vh;">
                     </div>
 
@@ -103,7 +53,7 @@
                     <div class="container justify-content-center" style="margin-top: 5vh;">
                         <label class="form-label view-profile-font-sizing">
                             What you're looking for in a study buddy:</label>
-                        <textarea type="text" class="form-control" name="looking-for" aria-describedby="lookingForHelp"
+                        <textarea type="text" class="form-control" name="looking_for" aria-describedby="lookingForHelp"
                             style="border-radius: 10px; height: 8vh;"></textarea>
                     </div>
 

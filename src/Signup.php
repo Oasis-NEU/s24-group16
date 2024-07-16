@@ -1,49 +1,23 @@
 <?php
+include_once __DIR__ . '/navbar.php';
 session_start();
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
-        Study Buddy Networking App
-    </title>
-    <link href = "../static/styles/main.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
-    </style>
-</head>
-<body style="height:100%; overflow-x: hidden; overflow-y: hidden;">
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm" style="padding-top: 4vh; padding-bottom: 4vh;">
-            <div class="container font-secondary">
-            <div class="row align-items-center">
-                <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw;">
-                <span class="col-4"><a href="#" class="navbar-brand font-primary" style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
-            </div>
-            
-            <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <?php
-                        include 'display-navbar.php';
-                        ?>
-                </ul>
-            </div>
-            </div>
-        </nav>
 <!--The main page-->
-
 <div class="text-light gradient-custom font-primary row" style="height: 85vh;">
     <section class="align-content-center">
+        <?php
+            if (isset($_GET['message'])) {
+                $message = htmlspecialchars($_GET['message']);
+                if ($message == 'no account') {
+                    echo "<div class='text-center' style='color: black; background-color: white; width: 40vw; 
+                    margin: auto; padding-top: 10px; padding-bottom: 10px; margin-bottom: 30px; border-radius: 50px; margin-top: 30px;'>
+                    You don't have an account with us. Create one today! 
+                    </div>";
+                }
+            }
+        ?>
         <div class="d-flex justify-content-center" style="width: 100vw;">
             <div class="justify-content-center"
             style="width: 30vw; height: 70vh; transform: translateX(12%); 

@@ -1,44 +1,43 @@
 <?php
 
-//execute database.php
-$mysqli = require __DIR__ . "/../database.php";
+function prepareBindExecute($value) {
+    $mysqli = require __DIR__ . "/../database/database.php";
 
-$sql = "SELECT ?
-        FROM profile
-        WHERE email = ?;";
-
-function prepareBindExecute($value, $email) {
     $stmt = $mysqli->stmt_init();
+
+    $sql = "SELECT ? FROM profile WHERE email=?";
+
     if (!$stmt->prepare($sql)) {
         die("SQL error: " . $mysqli->error);
     }
-    $stmt->bind_param("ss", $value, $email);
-    return htmlspecialchars($stmt->execute());
+
+    $stmt->bind_param("ss", $value, $_SESSION["email"]);
+    return $stmt->execute();
 }
 
 //Getters make it easier for front-end to use since
 //the front-end is not responsible for getting the database name correct
 //like with the spaceing e.g. first name, first-name, or first_name?
-function getFirstName($email) {
-    return prepareBindExecute('first_name', $email);
+function getFirstName() {
+    echo prepareBindExecute('first_name', $_SESSION["email"]);
 }
 
-function getLastName($email) {
-    return prepareBindExecute('last_name', $email);
+function getLastName() {
+    echo prepareBindExecute('last_name', $_SESSION["email"]);
 }
 
-function getYear($email) {
-    return prepareBindExecute('year', $email);
+function getYear() {
+    echo prepareBindExecute('year', $_SESSION["email"]);
 }
 
-function getContacts($email) {
-    return prepareBindExecute('contacts', $email);
+function getContacts() {
+    echo prepareBindExecute('contacts', $_SESSION["email"]);
 }
 
-function getLookingFor($email) {
-    return prepareBindExecute('looking_for', $email);
+function getLookingFor() {
+    echo prepareBindExecute('looking_for', $_SESSION["email"]);
 }
 
-function getBio($email) {
-    return prepareBindExecute('bio', $email);
+function getBio() {
+    echo prepareBindExecute('bio', $_SESSION["email"]);
 }

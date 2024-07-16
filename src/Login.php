@@ -1,46 +1,11 @@
 
 <?php
+require __DIR__ . '/misc/Utils.php';
+include_once __DIR__ . '/navbar.php';
 session_start();
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
-        Study Buddy Networking App
-    </title>
-    <link href = "../static/styles/main.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
-    </style>
-</head>
-<body style="height:100%; overflow-x: hidden; overflow-y: hidden;">
-<!-- Navbar -->
-<nav class="navbar navbar-expand-sm" style="padding-top: 4vh; padding-bottom: 4vh;">
-            <div class="container font-secondary">
-            <div class="row align-items-center">
-                <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw;">
-                <span class="col-4"><a href="#" class="navbar-brand font-primary" style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
-            </div>
-            
-            <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse" data-bs-target="#navmenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navmenu" style="font-size: 20px; font-weight: 475;">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-2">
-                        <?php
-                        include 'display-navbar.php';
-                        ?>
-                </ul>
-            </div>
-            </div>
-        </nav>
 <!--The main page-->
 <div class="text-light gradient-custom font-primary row" style="height: 85vh;">
     </section>
@@ -53,7 +18,7 @@ session_start();
                 <div style="font-size: 5.5vh;
                         font-weight: 500; margin-top: 6vh;">Welcome Back!
                 </div>
-                <form action="process-login.php" method="post">
+                <form action="process/process-login.php" method="post">
                 <div class="container justify-content-center" style="width: 50%; margin-top: 5vh;">
                     <label for="exampleInputEmail" class="form-label"><strong>Email address</strong></label>
                     <input type="email" class="form-control"

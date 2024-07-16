@@ -7,7 +7,8 @@ if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
 
 //Other checks
 if(strlen($_POST["password"]) < 8) {
-    die("Password must be at least 8 characters");
+    header("Location: ../Signup.php");
+    echo("Password must be at least 8 characters");
 }
 
 if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
@@ -29,7 +30,7 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 $mysqli = require __DIR__ . "/../database/database.php";
 
 //command to insert value into database.php
-$sql = "INSERT INTO login (email, password_hash)
+$sql = "INSERT INTO profile (email, password_hash)
         VALUES (?, ?)";
 
 //Initializes a statement object
@@ -48,7 +49,7 @@ $stmt->bind_param("ss", $_POST["email"], $password_hash);
 //finally execute the statement/ commands from $sql
 if ($stmt->execute()) {
     //If everything is good we go to EditProfile.html
-    header("Location: EditProfile.html");
+    header("Location: ../EditProfile.php");
     exit;
 } else {
     //if not then we assume the email has been taken. (email column needs to be defined as unique in the sql beforehand)
