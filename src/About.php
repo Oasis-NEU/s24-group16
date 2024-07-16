@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once __DIR__ . '/navbar.php';
 ?>
         <!-- About, the card image is to allow overlay onto the image. font-primary is Quicksand-->

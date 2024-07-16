@@ -34,11 +34,11 @@
         
         if ($_SESSION != null) {
             echo '<li class="nav-item">';
-            echo '<a href="/process/process-signout.php" class="nav-link">Sign Out</a>';
+            echo '<a href="./process/process-signout.php" class="nav-link">Sign Out</a>';
             echo '</li>';
         
             echo '<li class="nav-item">';
-            echo '<a href="Profile.php" class="nav-link">Profile</a>';
+            echo '<a href="ViewProfile.php" class="nav-link">Profile</a>';
             echo '</li>';
         
             echo '<li class="nav-item">';
