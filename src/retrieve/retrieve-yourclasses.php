@@ -45,8 +45,17 @@ foreach($commaArray as $commaPos) {
     echo "<button type=\"button\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px;\">";
     echo $vals[1] . " " . $vals[2];
     echo "</button>";
+    
+}
 
-    /*
+$vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
+echo "<button type=\"button\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px;\">";
+echo $vals[1] . " " . $vals[2];
+echo "</button>";
+
+
+function retrieveClassInfo($departCode, $departNum) {
+        /*
     $sql = sprintf("SELECT * FROM class WHERE department_code=? AND department_number=?");
     $stmt = $mysqli->stmt_init();
     $stmt->prepare($sql);
@@ -56,9 +65,4 @@ foreach($commaArray as $commaPos) {
     $row = $result->fetch_assoc();
     */
 }
-
-$vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
-echo "<button type=\"button\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px;\">";
-echo $vals[1] . " " . $vals[2];
-echo "</button>";
 
