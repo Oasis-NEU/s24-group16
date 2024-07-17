@@ -1,14 +1,13 @@
 <?php
 
+if (isset($_POST["search"])) {
+    //execute database.php
+    $mysqli = require __DIR__ . "/../database/database.php";
 
-//execute database.php
-$mysqli = require __DIR__ . "/../database/database.php";
+    $search = "%" . $_POST["search"]  . "%";
 
-if ($_SERVER["REQUEST-METHOD"] == "POST") {
-    $search = $_POST["search"];
-
-    $query = "SELECT * FROM class 
-    WHERE UPPER(name) LIKE UPPER('%?%')";
+    $sql = "SELECT * FROM class 
+    WHERE UPPER(name) LIKE UPPER(?)";
 
     $stmt = $mysqli->stmt_init();
 
@@ -18,7 +17,20 @@ if ($_SERVER["REQUEST-METHOD"] == "POST") {
 
     $stmt->bind_param("s", $search);
 
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //runs the command
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($row = $result ->fetch_assoc()) {
+        echo "<form action=\"process/process-searchclass.php\" method=\"post\">";
+        echo "<input name=\"class\" value=\" " 
+        . $row['department_code'] 
+        . " " 
+        . $row['department_number'] 
+        . "\" type=\"hidden\"></input>";
+        echo "<button>"
+        . $row["name"] . "</button></form>";
+    }
 }
 
 ?>

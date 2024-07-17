@@ -46,7 +46,7 @@
             echo '</li>';
         
             echo '<li class="nav-item">';
-            echo '<a href="FindClasses.php" class="nav-link">Find Classes</a>';
+            echo '<a href="SearchClass.php" class="nav-link">Find Classes</a>';
             echo '</li>';
         } else {
             echo '<li class="nav-item">';
