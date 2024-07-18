@@ -78,17 +78,13 @@ $stmt->bind_param("ss", $_POST["email"], $password_hash);
 //finally execute the statement/ commands from $sql
 if ($stmt->execute()) {
     //If everything is good we go to EditProfile.html
+    session_start();
+    $_SESSION["email"] = $_POST["email"];
     header("Location: ../EditProfile.php");
     exit;
-} else {
-    //if not then we assume the email has been taken. (email column needs to be defined as unique in the sql beforehand)
-    if ($mysqli->errno === 1062) {
-        die("email already taken");
-    }
-    die($mysqli->error . " " . $mysqli->errno);
 }
 
-$_SESSION = $_POST["email"];
+
 
 
 ?>
