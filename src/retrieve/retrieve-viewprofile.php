@@ -1,6 +1,7 @@
 <?php
 
-function prepareBindExecute($value) {
+function prepareBindExecute($value)
+{
     $mysqli = require __DIR__ . "/../database/database.php";
 
     $stmt = $mysqli->stmt_init();
@@ -19,38 +20,45 @@ function prepareBindExecute($value) {
 
     $row = $result->fetch_assoc();
 
-    
+
     return $row[$value];
 }
 
 //Getters make it easier for front-end to use since
 //the front-end is not responsible for getting the database name correct
 //like with the spaceing e.g. first name, first-name, or first_name?
-function getFirstName() {
+function getFirstName()
+{
     echo prepareBindExecute('first_name', $_SESSION["email"]);
 }
 
-function getLastName() {
+function getLastName()
+{
     echo prepareBindExecute('last_name', $_SESSION["email"]);
 }
 
-function getYear() {
+function getYear()
+{
     echo prepareBindExecute('year', $_SESSION["email"]);
 }
 
-function getMajor() {
+function getMajor()
+{
     echo prepareBindExecute('major', $_SESSION["email"]);
 }
 
 
-function getContacts() {
+function getContacts()
+{
     echo prepareBindExecute('contacts', $_SESSION["email"]);
 }
 
-function getLookingFor() {
+function getLookingFor()
+{
     echo prepareBindExecute('looking_for', $_SESSION["email"]);
 }
 
-function getBio() {
+function getBio()
+{
     echo prepareBindExecute('bio', $_SESSION["email"]);
 }
