@@ -67,6 +67,9 @@ if (isset($row["classes"])) {
         if (count($vals) != 0) {
             echoButton($vals);
         }
+    } else {
+        $vals = explode(" ", substr($classes, 0));
+        echoButton($vals);
     }
 
 
