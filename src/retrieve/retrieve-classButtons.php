@@ -33,6 +33,21 @@ $commaArray = array();
 
 $offset = 0;
 
+
+function echoButton($vals) {
+    echo "<form method=\"post\">";
+    echo "<button type=\"submit\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px; width: 10vw;\">";
+    echo $vals[1] . " " . $vals[2];
+    echo "</button>";
+    echo "<input name=\"department_code\" value=\"" 
+        . $vals[1]
+        . "\" type=\"hidden\">";
+    echo "<input name=\"department_number\" value=\"" 
+        . $vals[2]
+        . "\" type=\"hidden\">";
+    echo "</form>";
+}
+
 while (($offset = strpos($classes, ",", $offset)) !== false) {
     $commaArray[] = $offset;
     $offset++; // Increment the offset to move past the current comma
@@ -41,28 +56,12 @@ while (($offset = strpos($classes, ",", $offset)) !== false) {
 $start = 0;
 foreach($commaArray as $commaPos) {
     $vals = explode(" ", substr($classes, $start, $commaPos - $start));
+    echoButton($vals);
 
-    echo "<button type=\"button\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px;\">";
-    echo $vals[1] . " " . $vals[2];
-    echo "</button>";
-    
 }
 
 $vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
-echo "<button type=\"button\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px;\">";
-echo $vals[1] . " " . $vals[2];
-echo "</button>";
+echoButton($vals);
 
 
-function retrieveClassInfo($departCode, $departNum) {
-        /*
-    $sql = sprintf("SELECT * FROM class WHERE department_code=? AND department_number=?");
-    $stmt = $mysqli->stmt_init();
-    $stmt->prepare($sql);
-    $stmt->bind_param("ss", $vals[1], $vals[2]);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
-    */
-}
 

@@ -15,6 +15,7 @@ CREATE TABLE class (
     department_code VARCHAR(255), 
     department_number INTEGER,
     name VARCHAR(255),
-    description VARCHAR(255),
-    people VARCHAR(255)
+    description VARCHAR(10000),
+    people VARCHAR(255),
+    PRIMARY KEY(name)
 );
