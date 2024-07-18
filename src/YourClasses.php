@@ -8,7 +8,7 @@ include_once __DIR__ . '/navbar.php';
 <section class="d-flex" style="width: 100vw; height: 86vh;">
     <div class="d-flex py-3 flex-column" style="background-color: #FEAD76; width: 15vw; 
             padding-left: 2vw; padding-right: 2vw;">
-        <?php require "retrieve/retrieve-classButtons.php"; ?>
+        <?php include "retrieve/retrieve-classButtons.php"; ?>
     </div>
     <div class="flex-column d-flex align-items-center justify-content-center"
         style="background-color: #E37D37; width: 85vw;">

@@ -9,7 +9,7 @@ $sql = sprintf("SELECT classes FROM profile WHERE email=?", $mysqli);
 $stmt = $mysqli->stmt_init();
 
 //prepare the sql command in the statement
-if ( ! $stmt->prepare($sql)) {
+if (!$stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
@@ -24,47 +24,50 @@ $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
 if (isset($row["classes"])) {
-$classes = $row["classes"];
+    $classes = $row["classes"];
 
-$classesArray = array();
+    $classesArray = array();
 
-$done = false;
+    $done = false;
 
-$commaArray = array();
+    $commaArray = array();
 
-$offset = 0;
+    $offset = 0;
 
 
-function echoButton($vals) {
-    echo "<form method=\"post\">";
-    echo "<button type=\"submit\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px; width: 10vw;\">";
-    echo $vals[1] . " " . $vals[2];
-    echo "</button>";
-    echo "<input name=\"department_code\" value=\"" 
-        . $vals[1]
-        . "\" type=\"hidden\">";
-    echo "<input name=\"department_number\" value=\"" 
-        . $vals[2]
-        . "\" type=\"hidden\">";
-    echo "</form>";
-}
+    function echoButton($vals)
+    {
+        echo "<form method=\"post\">";
+        echo "<button type=\"submit\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px; width: 10vw;\">";
+        echo $vals[1] . " " . $vals[2];
+        echo "</button>";
+        echo "<input name=\"department_code\" value=\""
+            . $vals[1]
+            . "\" type=\"hidden\">";
+        echo "<input name=\"department_number\" value=\""
+            . $vals[2]
+            . "\" type=\"hidden\">";
+        echo "</form>";
+    }
 
-while (($offset = strpos($classes, ",", $offset)) !== false) {
-    $commaArray[] = $offset;
-    $offset++; // Increment the offset to move past the current comma
-}
+    while (($offset = strpos($classes, ",", $offset)) !== false) {
+        $commaArray[] = $offset;
+        $offset++; // Increment the offset to move past the current comma
+    }
 
-$start = 0;
-foreach($commaArray as $commaPos) {
-    $vals = explode(" ", substr($classes, $start, $commaPos - $start));
-    echoButton($vals);
+    if (count($commaArray) > 0) {
+        $start = 0;
+        foreach ($commaArray as $commaPos) {
+            $vals = explode(" ", substr($classes, $start, $commaPos - $start));
+            echoButton($vals);
 
-}
+        }
 
-$vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
-if (count($vals) != 0) {
-    echoButton($vals);
-}
+        $vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
+        if (count($vals) != 0) {
+            echoButton($vals);
+        }
+    }
 
 
 
