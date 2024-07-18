@@ -12057,39 +12057,3 @@ textarea.form-control-lg {
   font-weight: 400; 
   font-size: 3vh;
 }
-
-#search {
-  background-color: #3745c2;
-  margin: 200px 40%;
-}
-
-form {
-  background-color: #4654e1;
-  width: 300px;
-  height: 44px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-input {
-  all: unset;
-  font: 16px system-ui;
-  color: #fff;
-  height: 100%;
-  width: 100%;
-  padding: 6px 10px;
-}
-
-::placeholder {
-  color: #fff;
-  opacity: 0.7;
-}
-
-button {
-  all: unset;
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-}
