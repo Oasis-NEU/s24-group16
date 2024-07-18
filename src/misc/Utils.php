@@ -33,3 +33,9 @@ session_set_cookie_params([
 
 }
 
+function echoWarningMessage($text) {
+    echo "<div class='text-center' style='color: black; background-color: white; width: 40vw; 
+    margin: auto; padding-top: 10px; padding-bottom: 10px; margin-bottom: 30px; border-radius: 50px; margin-top: 30px;'>
+    " . $text . "
+    </div>";
+}

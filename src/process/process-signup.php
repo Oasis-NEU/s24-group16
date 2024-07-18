@@ -1,28 +1,5 @@
 <?php
 
-//Checks if the email is in a valid format using php's build-in FILTER_VALIDATE_EMAIL variable.
-if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    die("valid email is required");
-}
-
-//Other checks
-if(strlen($_POST["password"]) < 8) {
-    header("Location: ../Signup.php");
-    echo("Password must be at least 8 characters");
-}
-
-if ( ! preg_match("/[a-z]/i", $_POST["password"])) {
-    die("Password must contain at least one letter");
-}
-
-if ( ! preg_match("/[0-9]/i", $_POST["password"])) {
-    die("Password must contain at least one number");
-}
-
-if ($_POST["password"] !== $_POST["password_confirmation"]) {
-    die("Passwords must match");
-}
-
 //require executes database.php
 $mysqli = require __DIR__ . "/../database/database.php";
 
@@ -32,7 +9,7 @@ if ($_POST["email"]) {
 
     $stmt = $mysqli->stmt_init();
 
-    if ( ! $stmt->prepare($sql)) {
+    if (!$stmt->prepare($sql)) {
         die("SQL error: " . $mysqli->error);
     }
 
@@ -50,6 +27,34 @@ if ($_POST["email"]) {
     }
 }
 
+//Checks if the email is in a valid format using php's build-in FILTER_VALIDATE_EMAIL variable.
+$invalidRedirect = "Location: ../Signup.php?message=";
+if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    header($invalidRedirect . "invalid+email");
+    exit;
+}
+
+//Other checks
+if (strlen($_POST["password"]) < 8) {
+    header($invalidRedirect . "eight+chars");
+    exit;
+}
+
+if (!preg_match("/[a-z]/i", $_POST["password"])) {
+    header($invalidRedirect . "one+letter");
+    exit;
+}
+
+if (!preg_match("/[0-9]/i", $_POST["password"])) {
+    header($invalidRedirect . "one+number");
+    exit;
+}
+
+if ($_POST["password"] !== $_POST["password_confirmation"]) {
+    header($invalidRedirect . "must+match");
+    exit;
+}
+
 //creates a password hash
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
@@ -61,7 +66,7 @@ $sql = "INSERT INTO profile (email, password_hash)
 $stmt = $mysqli->stmt_init();
 
 //If the statement initialization wasn't successful, display an error
-if ( ! $stmt->prepare($sql)) {
+if (!$stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 

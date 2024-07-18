@@ -17,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //TLDR formats an SQL command that gets the result when you enter an email
     $sql = sprintf("SELECT * FROM profile
                     WHERE email = '%s'",
-                    $mysqli->real_escape_string($_POST["email"]));
+        $mysqli->real_escape_string($_POST["email"])
+    );
 
     $result = $mysqli->query($sql);
 
@@ -36,6 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             //Redirects user to ViewProfile.html
             header("Location: ../ViewProfile.php");
 
+            exit;
+        } else {
+            $_SESSION["valid-login"] = false;
+            header("Location: ../Login.php?message=" . urlencode("wrong password"));
             exit;
         }
     }
