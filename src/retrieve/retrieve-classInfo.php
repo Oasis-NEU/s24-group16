@@ -15,6 +15,7 @@ function retrieveClassInfo($departCode, $departNum) {
     return $result->fetch_assoc();
 }
 
+if (isset($vals)) {
 if (isset($_POST['department_code']) && isset($_POST['department_number'])) {
     $row = retrieveClassInfo($_POST['department_code'], $_POST['department_number']);
     
@@ -23,6 +24,7 @@ if (isset($_POST['department_code']) && isset($_POST['department_number'])) {
 
 }
 
+
 echo "<div class=\"text-center\">";
 echo "<h2 class=\"font-primary\">" . $row['name'] . "</h2>";
 echo "<p style=\"margin-top: 5vh; padding-left: 5vw; padding-right: 5vw;\">" . $row['description'] . "</p>";
@@ -30,3 +32,9 @@ echo "</div>";
 echo "<p style=\"margin-left:5vw; margin-top: 5vh;\">";
 echo "Classmates looking for buddies:";
 echo "</p>";
+echo "</div>";
+} else {
+    echo "<div class=\"text-center\">";
+    echo "<h3>You have no classes. Go to <a href=\"SearchClass.php\">Find Classes</a> to add some!</h3>";
+    echo "</div>";
+}

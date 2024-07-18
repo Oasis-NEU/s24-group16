@@ -6,3 +6,7 @@ curl_setopt($ch, CURLOPT_CUSTOMERREQUEST, 'GET');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 $response = curl_exec($ch);
+
+if (!empty($ch)) {
+    
+}

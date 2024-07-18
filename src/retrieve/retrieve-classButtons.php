@@ -23,6 +23,7 @@ $result = $stmt->get_result();
 
 $row = $result->fetch_assoc();
 
+if (isset($row["classes"])) {
 $classes = $row["classes"];
 
 $classesArray = array();
@@ -61,7 +62,11 @@ foreach($commaArray as $commaPos) {
 }
 
 $vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
-echoButton($vals);
+if (count($vals) != 0) {
+    echoButton($vals);
+}
 
 
 
+
+}

@@ -32,5 +32,3 @@ if (isset($_POST["search"])) {
         . $row["name"] . "</button></form>";
     }
 }
-
-?>

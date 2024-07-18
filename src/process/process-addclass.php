@@ -1,7 +1,7 @@
 <?php
 
 //Execute database.php and get the MySQL database connection object
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = require __DIR__ . "/../database/database.php";
 
 //Preparing the MySQL command string.
 $sql = "INSERT INTO class (class_id, title, classdescription)
