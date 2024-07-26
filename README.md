@@ -1,5 +1,12 @@
 # Study Buddy Networking Web App
 
+## About
+Started as a Spring 2024 Oasis project, this app is a better alternative to Canvas for connecting with other people in the same class as you.  
+
+By allowing you to specify regularly used contact methods on your profile as a vehicle, it is more likely for you to receive messages since you do not have to check the web app for it. 
+
+You also save time by specifying your availability, what you want in a study buddy, grade, year, and interests on your profile which buddies view before messaging you. 
+
 ## Functionality
 User sign-up and login. 
 
