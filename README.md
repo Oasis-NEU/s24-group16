@@ -2,8 +2,11 @@
 
 ## Functionality
 User sign-up and login. 
+
 User profile with contact information, availability, and other student information, with editing.
+
 Searching for classes to add.
+
 Viewing the classes you are enrolled under, and a list of all the students in that class of which you can look at their profile to contact them.
 
 ## Installation and setup
