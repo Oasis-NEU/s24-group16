@@ -1,12 +1,12 @@
-## Study Buddy Networking Web App
+# Study Buddy Networking Web App
 
-# Functionality
+## Functionality
 User sign-up and login. 
 User profile with contact information, availability, and other student information, with editing.
 Searching for classes to add.
 Viewing the classes you are enrolled under, and a list of all the students in that class of which you can look at their profile to contact them.
 
-# Installation and setup
+## Installation and setup
 Install XAMPP and run Apache and MySQL.
 Use the code in src/database/createDatabase.sql to create the database on your system.
 
