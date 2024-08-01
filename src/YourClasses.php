@@ -1,8 +1,10 @@
+<!-- This is the your classes page which can be reached to by clicking "Your Classes" on the navbar -->
+
 <?php
+//Resumes the session
 session_start();
 
 include_once __DIR__ . '/navbar.php';
-
 ?>
 <!--Content-->
 <section class="d-flex" style="width: 100vw; height: 86vh;">

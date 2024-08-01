@@ -1,8 +1,13 @@
+<!-- This is the Signup page which you can get to by pressing "Signup" at the navbar, 
+ or being automatically redirected from the Login page -->
 <?php
-include_once __DIR__ . '/navbar.php';
-require "misc/Utils.php";
+//Starts a blank session
 session_start();
 
+require __DIR__ . "/misc/Utils.php";
+
+//The navbar is 'embedded' here and includes all the standard script/ style links as well.
+include_once __DIR__ . '/navbar.php';
 ?>
 
 <!--The main page-->

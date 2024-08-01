@@ -1,3 +1,5 @@
+<!-- A file included in YourClasses, 
+ this first retrieves all classes pertaining to the email set beforehand in the session variable -->
 <?php
 
 //execute database.php
@@ -23,6 +25,7 @@ $result = $stmt->get_result();
 
 $row = $result->fetch_assoc();
 
+//If there are actually classes from our query
 if (isset($row["classes"])) {
     $classes = $row["classes"];
 
@@ -33,10 +36,16 @@ if (isset($row["classes"])) {
     $commaArray = array();
 
     $offset = 0;
-
-
+    
+    /**
+     * Echos the html formatting for a class button 
+     * @param array $vals an array where the department
+     * code is the element at index 1, and the department number is at index 2.
+     * @return void
+     */
     function echoButton($vals)
-    {
+    { 
+        
         echo "<form method=\"post\">";
         echo "<button type=\"submit\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px; width: 10vw;\">";
         echo $vals[1] . " " . $vals[2];
@@ -50,17 +59,21 @@ if (isset($row["classes"])) {
         echo "</form>";
     }
 
+    //Stores the positions of the commas into $commaArray[]
     while (($offset = strpos($classes, ",", $offset)) !== false) {
+        //Remainder: this is how you add values to an array
         $commaArray[] = $offset;
         $offset++; // Increment the offset to move past the current comma
     }
 
+    //If there are multiple elements
     if (count($commaArray) > 0) {
+        
         $start = 0;
         foreach ($commaArray as $commaPos) {
+            //The $classes string is parsed into an array and passed into $vals
             $vals = explode(" ", substr($classes, $start, $commaPos - $start));
-            echoButton($vals);
-
+            echoButton(str_replace(',','', $vals));
         }
 
         $vals = explode(" ", substr($classes, $commaArray[count($commaArray) - 1] + 1));
@@ -71,8 +84,4 @@ if (isset($row["classes"])) {
         $vals = explode(" ", substr($classes, 0));
         echoButton($vals);
     }
-
-
-
-
 }

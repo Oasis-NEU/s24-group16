@@ -1,5 +1,9 @@
+<!-- This is the About page which can be reached by clicking on the title text -->
 <?php
+//Resumes the session, which changes the navbar if the user is logged in
 session_start();
+
+//The navbar is 'embedded' here and includes all the standard script/ style links as well.
 include_once __DIR__ . '/navbar.php';
 ?>
 <!-- About, the card image is to allow overlay onto the image. font-primary is Quicksand-->

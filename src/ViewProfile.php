@@ -1,6 +1,13 @@
+<!-- This is the view profile page which you can get to by clicking "Profile" on the navbar-->
+
 <?php
+
+//Resumes the session
 session_start();
+
 require __DIR__ . '/retrieve/retrieve-viewprofile.php';
+
+//The navbar is 'embedded' here and includes all the standard script/ style links as well.
 include_once __DIR__ . '/navbar.php';
 
 ?>

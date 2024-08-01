@@ -1,7 +1,12 @@
+<!-- This is the login page which can be reached by clicking "Login" from the navbar -->
 <?php
-require __DIR__ . '/misc/Utils.php';
-include_once __DIR__ . '/navbar.php';
+//starts a blank session
 session_start();
+
+require __DIR__ . '/misc/Utils.php';
+
+//The navbar is 'embedded' here and includes all the standard script/ style links as well.
+include_once __DIR__ . '/navbar.php';
 
 ?>
 

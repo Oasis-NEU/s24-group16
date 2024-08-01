@@ -1,3 +1,8 @@
+<!-- Not directly included in the "SearchClass" page,
+  is used as the action script for the button results of a search
+ Adds the class to the user's class list, and the user to the class' user list when clicked
+  -->
+
 <?php
 session_start();
 if (isset($_POST['class'])) {
@@ -20,21 +25,21 @@ if (isset($_POST['class'])) {
     } else {
         $bindVal = $class;
     } 
-    $sql2 = "UPDATE profile SET classes=? WHERE email=?"; 
+    $sql = "UPDATE profile SET classes=? WHERE email=?"; 
 
-    $stmt2 = $mysqli->stmt_init();
-    $stmt2->prepare($sql2);
-    $stmt2->bind_param("ss", $bindVal, $_SESSION['email']);
-    $stmt2->execute();
+    $stmt = $mysqli->stmt_init();
+    $stmt->prepare($sql);
+    $stmt->bind_param("ss", $bindVal, $_SESSION['email']);
+    $stmt->execute();
 
-    $sql3 = "SELECT people FROM class WHERE department_code=? AND department_number=?";
-    $stmt3 = $mysqli->stmt_init();
-    $stmt3->prepare($sql3);
+    $sql = "SELECT people FROM class WHERE department_code=? AND department_number=?";
+    $stmt = $mysqli->stmt_init();
+    $stmt->prepare($sql);
 
     $values = explode(" ", $_POST['class']);
-    $stmt3->bind_param("ss", $values[1], $values[2]);
-    $stmt3->execute();
-    $result=$stmt3->get_result();
+    $stmt->bind_param("ss", $values[1], $values[2]);
+    $stmt->execute();
+    $result=$stmt->get_result();
     $row = $result->fetch_assoc();
 
     if (strpos($row["people"], $_SESSION["email"]) == false) {
@@ -44,11 +49,11 @@ if (isset($_POST['class'])) {
             $bindVal = $_SESSION["email"];
         }
     }
-    $sql4 = "UPDATE class SET people=? WHERE department_code=? AND department_number=?";
-    $stmt4 = $mysqli->stmt_init();
-    $stmt4->prepare($sql4);
-    $stmt4->bind_param("sss", $bindVal, $values[1], $values[2]);
-    $stmt4->execute();
+    $sql = "UPDATE class SET people=? WHERE department_code=? AND department_number=?";
+    $stmt = $mysqli->stmt_init();
+    $stmt->prepare($sql);
+    $stmt->bind_param("sss", $bindVal, $values[1], $values[2]);
+    $stmt->execute();
 
     }
     header("Location: ../YourClasses.php");
