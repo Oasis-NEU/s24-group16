@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Creates a secure session by regenerating an ID at a constant interval
+ * @return void
+ */
 function createSecureSession() {
     session_start();
 
@@ -15,6 +19,10 @@ function createSecureSession() {
     }
 }
 
+/**
+ * Configures the server to only accept session IDs created by the server
+ * @return void
+ */
 function configServer() {
     //Setting it to true (1 means true)
 ini_set('session.use_only_cookies', 1);
@@ -30,9 +38,13 @@ session_set_cookie_params([
     'secure' => true, //Use https connection
     'httponly' => true
 ]);
-
 }
 
+/**
+ * Echos a warning message with centered text
+ * @param string $text the warning message
+ * @return void (echoes html)
+ */
 function echoWarningMessage($text) {
     echo "<div class='text-center' style='color: black; background-color: white; width: 40vw; 
     margin: auto; padding-top: 10px; padding-bottom: 10px; margin-bottom: 30px; border-radius: 50px; margin-top: 30px;'>
