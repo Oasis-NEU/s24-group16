@@ -8,7 +8,7 @@ include_once __DIR__ . '/navbar.php';
 ?>
 
 <!-- The main content of the page-->
-<div style="background-color: #F7FF9A;" class="d-flex justify-content-center">
+<div style="background-color: #F7FF9A; padding-bottom: 200px;" class="d-flex justify-content-center">
     <div clas="flex-column">
         <!-- The search input box -->
         <div style="background-color: white; width: 70vw; 
@@ -34,11 +34,13 @@ include_once __DIR__ . '/navbar.php';
         
         <!-- The search results box -->
         <div class="d-flex" style="background-color: white; width: 70vw; border-radius: 100px; margin-top: 8vh;">
-            <div style= "padding-left: 50px; padding-top: 30px;">
+            <div style= "padding-left: 70px; padding-top: 50px;">
             <h2 style="margin-bottom: 50px;">Results:</h2>
+            <div style="margin-bottom: 50px;">
                 <?php
                 include 'retrieve/retrieve-searchclass.php';
                 ?>
+            </div>
             </div>
         </div>
 </div>
