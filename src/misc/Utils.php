@@ -1,3 +1,4 @@
+<!-- Provides useful methods that don't seem to fit anywhere else -->
 <?php
 
 /**
