@@ -7,8 +7,10 @@ session_start();
 include_once __DIR__ . '/navbar.php';
 ?>
 
+<!-- The main content of the page-->
 <div style="background-color: #F7FF9A;" class="d-flex justify-content-center">
     <div clas="flex-column">
+        <!-- The search input box -->
         <div style="background-color: white; width: 70vw; 
         margin-top: 8vh; padding-top: 5vh; padding-bottom: 5vh; border-radius: 100px;">
         <form method="post" id="searchclass" class="row">
@@ -30,8 +32,10 @@ include_once __DIR__ . '/navbar.php';
         </form>
         </div>
         
-        <div style="background-color: #fffff; width: 70vw;">
-            <div name="results" style="background-color: #F7FF9A">
+        <!-- The search results box -->
+        <div class="d-flex" style="background-color: white; width: 70vw; border-radius: 100px; margin-top: 8vh;">
+            <div style= "padding-left: 50px; padding-top: 30px;">
+            <h2 style="margin-bottom: 50px;">Results:</h2>
                 <?php
                 include 'retrieve/retrieve-searchclass.php';
                 ?>
@@ -40,5 +44,4 @@ include_once __DIR__ . '/navbar.php';
 </div>
 </div>
 </body>
-
 </html>

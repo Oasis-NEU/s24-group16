@@ -1,3 +1,16 @@
+<!-- Marked as the action script for the signup form on the Signup.php page
+ 
+Receives the email from the post, tries to see if the email already exists and 
+if so redirects to Signup.php with a url code message "already existing"
+
+Validates the format of the email/ passwords:
+    must have at least one letter
+    must have at least one character
+    the 2 password inputs must match
+    email must be in valid format
+
+Creates the profile with the password and email using SQL then redirects to EditProfile.php
+-->
 <?php
 
 //require executes database.php

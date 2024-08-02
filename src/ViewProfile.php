@@ -12,11 +12,12 @@ include_once __DIR__ . '/navbar.php';
 
 ?>
 
-<!--Content-->
+<!--Display for the profile-->
 <div class="text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
     <div class="d-flex justify-content-center align-items-center"
         style="height: 86vh; width: 100vw; position: absolute;">
 
+        <!-- The left display section (first name, last name, year, major, contacts) -->
         <div class="bg-white view-profile-box font-primary text-center" style="width: 20vw; padding-top: 5vh;">
             <h1 style="font-size: 6vh;">
                 <?php
@@ -42,6 +43,7 @@ include_once __DIR__ . '/navbar.php';
             </a>
         </div>
 
+        <!-- The right display section (looking for, bio) -->
         <div class="bg-white view-profile-box font-primary" style="width: 40vw; 
             margin-left: 5vw; padding-top: 7vh; padding-left: 5vw;">
             <p class="view-profile-font-sizing">Looking for a buddy that:</p>

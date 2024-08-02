@@ -14,6 +14,7 @@ include_once __DIR__ . '/navbar.php';
 <div class="text-light gradient-custom font-primary row" style="height: 85vh;">
     <section class="align-content-center">
         <?php
+        //Receives the URL message and displays the appropriate full message to the user.
         if (isset($_GET['message'])) {
             $message = htmlspecialchars($_GET['message']);
             if ($message == 'no account') {
@@ -33,6 +34,8 @@ include_once __DIR__ . '/navbar.php';
             }
         }
         ?>
+
+        <!-- The signup area -->
         <div class="d-flex justify-content-center" style="width: 100vw;">
             <div class="justify-content-center" style="width: 30vw; height: 70vh; transform: translateX(12%); 
             z-index: 1; background-color: white; border-radius: 50px;">
@@ -61,6 +64,8 @@ include_once __DIR__ . '/navbar.php';
                     </div>
                 </section>
             </div>
+
+            <!-- The underlay with some advertising info -->
             <div class="theme-orange" style="width: 35vw; height: 70vh; 
             border-radius: 50px; z-index: 0; transform: translateX(-12%); padding-left: 11vw; padding-top: 6vh;">
                 <h2 style="font-weight: 100">

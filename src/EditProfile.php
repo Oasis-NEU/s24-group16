@@ -7,13 +7,13 @@ session_start();
 include_once __DIR__ . '/navbar.php';
 ?>
 
-<!--Content (maybe add functionality to delete sometime?)-->
+<!-- Them main content -->
 <div class="text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
     <form action="process/process-editprofile.php" method="post" id="profile" novalidate>
 
+        <!-- The first white display section, containing first name, last name, year, and major-->
         <div class="d-flex justify-content-center align-items-center"
             style="height: 86vh; width: 100vw; position: absolute;">
-
             <div class="bg-white view-profile-box font-primary text-center" style="width: 20vw; padding-top: 5vh;">
                 <h1 style="font-size: 4.5vh;">Edit Profile</h1>
                 <div class="view-profile-font-sizing">
@@ -44,6 +44,7 @@ include_once __DIR__ . '/navbar.php';
 
             </div>
 
+            <!-- The second white display section, containing contacts, "looking for", and bio -->
             <div class="bg-white view-profile-box font-primary" style="width: 40vw; 
             margin-left: 5vw; padding-top: 7vh; padding-left: 3vw; padding-right: 3vh">
                 <div class="container justify-content-center">

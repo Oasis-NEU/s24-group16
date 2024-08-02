@@ -33,6 +33,7 @@ include_once __DIR__ . '/navbar.php';
         <img src="../static/img/About1.jpg" />
     </div>
 </section>
+
 <!--How it works-->
 <section>
     <div class="d-flex font-primary">
@@ -58,7 +59,6 @@ include_once __DIR__ . '/navbar.php';
         </div>
     </div>
 </section>
-
 
 <!--Discover Buddies in your classes-->
 <div class="font-primary text-center">

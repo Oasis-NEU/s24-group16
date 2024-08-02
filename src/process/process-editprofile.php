@@ -1,3 +1,6 @@
+<!-- Is the action script for the submit button for the EditProfile.php page
+ 
+Updates the respective values if they are actually inputted and not empty -->
 <?php
 session_start();
 //execute database.php
@@ -6,7 +9,7 @@ $mysqli = require __DIR__ . "/../database/database.php";
 $elements = array("first_name", "last_name", "year", "major", "contacts", "looking_for", "bio");
 
 for ($i = 0; $i < count($elements); $i++) {
-    if ($_POST[$elements[$i]] != null) {
+    if ($_POST[$elements[$i]] != null && $_POST[$elements[$i]] != "") {
         $sql = "UPDATE profile
         SET " . $elements[$i] . " = ?
         WHERE email = ?";

@@ -15,6 +15,7 @@ include_once __DIR__ . '/navbar.php';
     </section>
     <section class="text-center align-content-center">
         <?php
+        //Receives the url message and displays the appropriate message to the user.
         if (isset($_GET['message'])) {
             $message = htmlspecialchars($_GET['message']);
             if ($message == 'wrong password') {
@@ -22,6 +23,8 @@ include_once __DIR__ . '/navbar.php';
             } 
         }
         ?>
+
+        <!-- The main login area -->
         <div class="d-flex justify-content-center" style="">
             <div class="login-background-image" style="width: 35vw;">
 
