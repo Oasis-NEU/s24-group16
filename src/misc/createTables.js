@@ -1,3 +1,5 @@
+//Note: This isn't currently being used since it uses an outdated version of the database
+//but it will still serve useful for the future once it's updated with the current database
 let mysql = require('mysql');
 
 let connection = mysql.createConnection({

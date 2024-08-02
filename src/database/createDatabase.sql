@@ -1,3 +1,5 @@
+-- Creates tables in the database: only needs to be executed once per server.
+
 CREATE TABLE profile (
     email VARCHAR(255) PRIMARY KEY,
     password_hash TEXT,
