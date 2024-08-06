@@ -8,7 +8,7 @@ include_once __DIR__ . '/navbar.php';
 ?>
 
 <!-- Them main content -->
-<div class=" row text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
+<div class=" text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
     <form action="process/process-editprofile.php" method="post" id="profile" novalidate>
 
         <!-- The first white display section, containing first name, last name, year, and major-->
@@ -36,7 +36,7 @@ include_once __DIR__ . '/navbar.php';
                     </div>
 
                     <div class="container justify-content-center" style="width: 80%; margin-top: 3vh;">
-                        <label class="form-label">Major</label>
+                        <label class="form-label">Major and Minor</label>
                         <input type="text" class="form-control" name="major" style="border-radius: 100px; height: 5vh;">
                     </div>
                 </div>

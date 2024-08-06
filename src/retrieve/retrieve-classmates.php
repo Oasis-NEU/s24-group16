@@ -39,6 +39,7 @@ echo "</a>";
 
 }
 
+$hasClassmates = false;
 if (isset($row)) {
     $people = $row['people'];
 
@@ -47,7 +48,12 @@ if (isset($row)) {
     foreach ($peopleArray as $person) {
         if (trim($person) != $_SESSION["email"]) {
             personHyperLink(trim($person));
+            $hasClassmates = true;
         }
     }
 
+}
+
+if (!$hasClassmates) {
+    echo "<p>Oh no! There are no classmates using Study Buddy in your class: try reaching out to your professor to introduce more of your classmates to this platform!</p>";
 }

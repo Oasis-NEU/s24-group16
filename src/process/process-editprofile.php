@@ -35,5 +35,5 @@ for ($i = 0; $i < count($elements); $i++) {
 }
 
 //redirects user to YourClasses.html
-header("Location: ../ViewProfile.php");
+header("Location: ../ViewProfile.php?profile=own");
 exit;

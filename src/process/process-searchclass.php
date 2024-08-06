@@ -20,7 +20,7 @@ if (isset($_POST['class'])) {
     $stmt->execute();
     $result=$stmt->get_result();
     $row = $result->fetch_assoc();
-    if (strpos($row["classes"], $class) == false) {
+    if (strpos($row["classes"], $class) === false) {
     if ($row["classes"] != null) {
         $bindVal = $row['classes'] . ", " . $class;
     } else {

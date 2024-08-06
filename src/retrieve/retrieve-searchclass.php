@@ -1,4 +1,5 @@
 <!-- Included in the "SearchClass" page
+
  This receives the post call and searches for classes based on the information from the $_POSt variable
  Then it echo displays those classes with buttons to add them. -->
 <?php
@@ -17,7 +18,8 @@ function showSingleResult($class) {
     . $class['department_number'] 
     . "\" type=\"hidden\"></input>";
     echo "<button class='btn btn-theme-orange' style='margin-right: 20px; border-radius: 100px;'>Add</button>";
-    echo "<label style='font-size: 20px;' >" . $class["name"] . "</label>";
+    echo "<label style='font-size: 20px; margin-bottom: 30px;' >" 
+    . $class['department_code'] . " " . $class['department_number'] . " | " . $class["name"] . "</label>";
     echo "</form>";
     
 }
@@ -43,9 +45,14 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result (loops through the information)
+    //While there is information in the result or reaches 20 (loops through the information)
+    $count = 0;
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
+        $count++;
+        if ($count == 20) {
+            break;
+        }
     }
 
     //if both the search code and number were searched for and not empty
@@ -69,9 +76,14 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result (loops through the information)
+    //While there is information in the result or reaches 20 (loops through the information)
+    $count = 0;
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
+        $count++;
+        if ($count == 20) {
+            break;
+        }
     }
 
     //if the search code was the only input
@@ -95,9 +107,14 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result (loops through the information)
+    //While there is information in the result or reaches 20 (loops through the information)
+    $count = 0;
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
+        $count++;
+        if ($count == 20) {
+            break;
+        }
     }
 
     //if the search number was the only input
@@ -121,8 +138,13 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result (loops through the information)
+    //While there is information in the result or reaches 20 (loops through the information)
+    $count = 0;
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
+        $count++;
+        if ($count == 20) {
+            break;
+        }
     }
 }

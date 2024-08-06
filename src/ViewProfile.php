@@ -32,7 +32,7 @@ if (isset($_GET['profile'])) {
         style="height: 86vh; width: 100vw; position: absolute;">
 
         <!-- The left display section (first name, last name, year, major, contacts) -->
-        <div class="bg-white view-profile-box font-primary text-center" style="width: 20vw; padding-top: 5vh;">
+        <div class="bg-white view-profile-box font-primary text-center" style="width: 20vw; padding-top: 5vh; padding-right: 2vw; padding-left: 2vw;">
             <h1 style="font-size: 6vh;">
                 <?php
                 getFirstName($email);
@@ -42,7 +42,7 @@ if (isset($_GET['profile'])) {
             </h1>
             <p class="view-profile-font-sizing" style="margin-top:5vh;">
                 Year <?php getYear($email);
-                echo " ";
+                echo " | ";
                 getMajor($email); ?> student
             </p>
             <p class="view-profile-font-sizing" style="margin-top:10vh;">Contacts:
@@ -50,8 +50,7 @@ if (isset($_GET['profile'])) {
                 <?php getContacts($email); ?>
             </div>
             </p>
-            <div style="height: 8vh;">
-            </div>
+            
             <?php
                 if ($editPerms) {
                     echo "<a href='EditProfile.php'>";
@@ -63,7 +62,7 @@ if (isset($_GET['profile'])) {
 
         <!-- The right display section (looking for, bio) -->
         <div class="bg-white view-profile-box font-primary" style="width: 40vw; 
-            margin-left: 5vw; padding-top: 7vh; padding-left: 5vw;">
+            margin-left: 5vw; padding-top: 7vh; padding-left: 5vw; padding-right: 2vw;">
             <p class="view-profile-font-sizing">Looking for a buddy that:</p>
             <div class="view-profile-font-sizing" style="height: 20vh;">
                 <?php getLookingFor($email); ?>

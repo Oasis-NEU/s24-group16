@@ -19,17 +19,20 @@ if (isset($vals)) {
     }
 
     echo "<div class=\"flex-column\"
-            style=\"background-color: white; width: 80%; border-radius: 50px; padding-top:8vh; padding-bottom: 8vh; margin-top: 5vh; margin-bottom: 5vh;\">";
+            style=\"background-color: white; width: 80%; 
+            border-radius: 50px; padding-top:8vh; padding-bottom: 8vh; margin-top: 5vh; margin-bottom: 5vh;
+            padding-left: 10vh; padding-right: 10vh;\">";
     echo "<h2 class=\"font-primary text-center\">" . $row['name'] . "</h2>";
-    echo "<p class=\"text-center\" style=\"margin-top: 5vh; padding-left: 5vw; padding-right: 5vw;\">" . $row['description'] . "</p>";
-    echo "<p style=\"margin-left:5vw; margin-top: 5vh; margin-bottom: 5vh;\">";
+    echo "<p class=\"text-center\" style=\"margin-top: 5vh;\">" . $row['description'] . "</p>";
+    echo "<p style=\"margin-top: 5vh; margin-bottom: 8vh;\">";
     echo "Classmates looking for buddies:";
     include "retrieve/retrieve-classmates.php";
     echo "</p>";
     echo "</div>";
 } else {
     $row = null;
-    echo "<div class=\"text-center\" style=\"height: 75vh; o: 0%;\">";
+    echo "<div class=\"flex-column text-center\"
+    style=\"background-color: white; width: 80%; border-radius: 50px; padding-top:8vh; padding-bottom: 8vh; margin-top: 5vh; margin-bottom: 5vh; height: 72vh;\">";
     echo "<h3>You have no classes. Go to <a href=\"SearchClass.php\">Find Classes</a> to add some!</h3>";
     echo "</div>";
 }
