@@ -1,4 +1,5 @@
 <!-- Not directly included in the "SearchClass" page,
+
   is used as the action script for the button results of a search
  Adds the class to the user's class list, and the user to the class' user list when clicked
   -->
@@ -21,7 +22,7 @@ if (isset($_POST['class'])) {
     $row = $result->fetch_assoc();
     if (strpos($row["classes"], $class) == false) {
     if ($row["classes"] != null) {
-        $bindVal = $row['classes'] . "," . $class;
+        $bindVal = $row['classes'] . ", " . $class;
     } else {
         $bindVal = $class;
     } 

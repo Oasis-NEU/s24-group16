@@ -1,4 +1,5 @@
 <!-- This is the navbar, a shared part of all pages that goes on top and establishes necessary style links -->
+<!-- Note: the navbar dynamically changes from "Signup Login" to "Signout ViewProfile YourClasses FindClasses" after you login/signup-->
 <!DOCTYPE html>
 <html>
 
@@ -14,12 +15,12 @@
     </style>
 </head>
 
-<body style="overflow-x: hidden;">
+<body class = "d-flex flex-column" style="overflow-x: hidden;">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm" style="padding-top: 4vh; padding-bottom: 4vh; background-color: #FFFFFF;">
+    <nav class="row navbar navbar-expand-sm" style="width: 100%; padding-top: 4vh; padding-bottom: 4vh; background-color: #FFFFFF;">
         <div class="container font-secondary">
             <div class="row align-items-center">
-                <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw;">
+                <img class="col-4 font-primary" src="../static/img/StudyBuddyIcon.png" style="width: 8vw; margin-left: 10vh;">
                 <span class="col-4"><a href="About.php" class="navbar-brand font-primary"
                         style="line-height:110%; font-weight: 700;">Study Buddy<br>Networking</a></span>
             </div>
@@ -40,7 +41,7 @@
                             echo '</li>';
 
                             echo '<li class="nav-item">';
-                            echo '<a href="ViewProfile.php" class="nav-link">Profile</a>';
+                            echo '<a href="ViewProfile.php?profile=own" class="nav-link">Profile</a>';
                             echo '</li>';
 
                             echo '<li class="nav-item">';

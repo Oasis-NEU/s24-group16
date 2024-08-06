@@ -11,7 +11,7 @@ include_once __DIR__ . '/navbar.php';
 ?>
 
 <!--The main page-->
-<div class="text-light gradient-custom font-primary row" style="height: 85vh;">
+<div class=" row text-light gradient-custom font-primary row" style="height: 85vh;">
     </section>
     <section class="text-center align-content-center">
         <?php

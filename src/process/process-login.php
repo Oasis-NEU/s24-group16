@@ -1,3 +1,12 @@
+<!-- Is linked as the action script for the login.php login form
+ 
+Checks if the user exists, validates the password, if good creates a secure session
+using a function from Utils.php.
+
+If the password is wrong, redirects to Login.php with a url message "wrong password"
+
+If the email doesn't exist in the database then redirects to Signup.php with message "no account"
+-->
 <?php
 session_start();
 
@@ -35,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["email"] = $user["email"];
 
             //Redirects user to ViewProfile.html
-            header("Location: ../ViewProfile.php");
+            header("Location: ../ViewProfile.php?profile=" . urlencode("own"));
 
             exit;
         } else {

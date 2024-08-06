@@ -8,8 +8,8 @@ include_once __DIR__ . '/navbar.php';
 ?>
 
 <!-- The main content of the page-->
-<div style="background-color: #F7FF9A; padding-bottom: 200px;" class="d-flex justify-content-center">
-    <div clas="flex-column">
+<div style="background-color: #F7FF9A; padding-bottom: 24vh;" class="d-flex justify-content-center">
+    <div class="flex-column">
         <!-- The search input box -->
         <div style="background-color: white; width: 70vw; 
         margin-top: 8vh; padding-top: 5vh; padding-bottom: 5vh; border-radius: 100px;">

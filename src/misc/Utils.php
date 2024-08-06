@@ -52,3 +52,22 @@ function echoWarningMessage($text) {
     " . $text . "
     </div>";
 }
+
+/**
+ * Retrieves the entire row of a class matching the given department code and department num
+ * @param string $departCode
+ * @param string $departNum
+ * @return array|bool|null
+ */
+function retrieveClassInfo($departCode, $departNum) {
+    //execute database.php
+    $mysqli = require __DIR__ . "/../database/database.php";
+
+    $sql = sprintf("SELECT * FROM class WHERE department_code=? AND department_number=?");
+    $stmt = $mysqli->stmt_init();
+    $stmt->prepare($sql);
+    $stmt->bind_param("ss", $departCode, $departNum);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->fetch_assoc();
+}
