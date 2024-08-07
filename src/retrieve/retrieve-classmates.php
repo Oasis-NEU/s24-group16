@@ -1,13 +1,16 @@
-<!-- Included in the ViewClasses page, displays the classmates from that class and buttons for you to look at their profile
+<!-- Included in the ViewClasses page through retrieve-classInfo.php, 
+ displays the classmates from that class and buttons for you to look at their profile
  
 Uses a variable $row
 that is defined in the retrieve-classInfo script (which is included before this script in the page) to
 determine which class to get all of the information from. -->
 <?php 
 
-
-//base64_encode()
-
+/**
+ * Echoes a person's first and last name that is hyperlinked to their profile
+ * @param string $email the email
+ * @return void (echoes the person's first and last name that is hyperlinked to their profile)
+ */
 function personHyperLink($email) {
 
 //execute database.php

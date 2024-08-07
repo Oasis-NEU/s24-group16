@@ -45,7 +45,7 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result or reaches 20 (loops through the information)
+    //While there is information in the result (loops through the information)
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
     }
@@ -71,14 +71,9 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result or reaches 20 (loops through the information)
-    $count = 0;
+    //While there is information in the result (loops through the information)
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
-        $count++;
-        if ($count == 20) {
-            break;
-        }
     }
 
     //if the search code was the only input
@@ -102,14 +97,10 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result or reaches 20 (loops through the information)
+    //While there is information in the result (loops through the information)
     $count = 0;
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
-        $count++;
-        if ($count == 20) {
-            break;
-        }
     }
 
     //if the search number was the only input
@@ -133,13 +124,8 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    //While there is information in the result or reaches 20 (loops through the information)
-    $count = 0;
+    //While there is information in the result (loops through the information)
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
-        $count++;
-        if ($count == 20) {
-            break;
-        }
     }
 }

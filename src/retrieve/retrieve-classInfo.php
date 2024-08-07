@@ -1,4 +1,4 @@
-<!-- A file included in YourClasses, this either:
+<!-- A file included in YourClasses after retrieve-classButtons is included, this either:
 
   retrieves your first class, 
   retrieves a class specified in the session variable,
@@ -8,7 +8,7 @@
 
 require __DIR__ . "/../misc/Utils.php";
 
-//If the $vals variable, which contains class info, is set.
+//If the $vals variable, which contains class info from classButtons which is included before this, is set.
 //Note that $vals is set in the "retrieve-classButtons.php" file, 
 //which is included before this file within the YourClasses.php file.
 if (isset($vals)) {
