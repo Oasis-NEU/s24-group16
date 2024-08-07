@@ -45,8 +45,8 @@ if (isset($_GET['profile'])) {
                 echo " | ";
                 getMajor($email); ?> student
             </p>
-            <p class="view-profile-font-sizing" style="margin-top:10vh;">Contacts:
-            <div class="view-profile-font-sizing">
+            <p class="view-profile-font-sizing" style="margin-top:5vh;">Contacts:
+            <div class="view-profile-font-sizing" style="font-size: 20px; word-wrap: break-word">
                 <?php getContacts($email); ?>
             </div>
             </p>
@@ -54,7 +54,7 @@ if (isset($_GET['profile'])) {
             <?php
                 if ($editPerms) {
                     echo "<a href='EditProfile.php'>";
-                    echo "<button class='btn btn-theme-orange' style='border-radius: 50px; font-size: 3vh;'>Edit Profile</button>";
+                    echo "<button class='btn btn-theme-orange' style='border-radius: 50px; font-size: 3vh; margin-top: 2vh;'>Edit Profile</button>";
                     echo "</a>";
                 }
             ?>

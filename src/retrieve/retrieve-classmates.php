@@ -24,7 +24,7 @@ if (!$stmt->prepare($sql)) {
 }
 
 //bind values, the first arg is just the insert type
-$stmt->bind_param("s", $_SESSION['email']);
+$stmt->bind_param("s", $email);
 
 //runs the command
 $stmt->execute();
@@ -34,7 +34,7 @@ $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 
 echo "<a href=\"ViewProfile.php?profile=" . base64_encode($email) . "\">";
-echo "<p style=\"margin-left:5vw;\">" . $row["first_name"] . " " . $row["last_name"] .  "</p>";
+echo "<p style=\"margin-left:2vw;\">" . $row["first_name"] . " " . $row["last_name"] .  "</p>";
 echo "</a>";
 
 }

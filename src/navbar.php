@@ -35,7 +35,7 @@
                         <?php
                         error_reporting(0);
 
-                        if ($_SESSION != null) {
+                        if (isset($_SESSION["email"])) {
                             echo '<li class="nav-item">';
                             echo '<a href="./process/process-signout.php" class="nav-link">Sign Out</a>';
                             echo '</li>';

@@ -46,13 +46,8 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     $result = $stmt->get_result();
 
     //While there is information in the result or reaches 20 (loops through the information)
-    $count = 0;
     while ($row = $result->fetch_assoc()) {
         showSingleResult($row);
-        $count++;
-        if ($count == 20) {
-            break;
-        }
     }
 
     //if both the search code and number were searched for and not empty

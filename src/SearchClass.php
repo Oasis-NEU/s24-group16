@@ -22,7 +22,7 @@ include_once __DIR__ . '/navbar.php';
             <button class="btn btn-theme-orange" style="border-radius: 100px; height: 40px;">Search</button>
             </div>
             <div class="col-7 text-center">
-            <label style="font-size: 3vh; margin-bottom: 10px;">Search by department code and course number</label>
+            <label style="font-size: 3vh; margin-bottom: 10px;">Search by department code and/ or course number</label>
             <br>
             <input type="text" name="search-code" placeholder="Code..." style="border-radius: 100px; height: 40px;">
             <input type="number" name="search-number" placeholder="Number..." style="border-radius: 100px; height: 40px;">

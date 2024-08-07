@@ -55,7 +55,7 @@ include_once __DIR__ . '/navbar.php';
             <h2 style="font-weight: 800; margin-top:40px; font-size: 28px;">Connect With Buddies</h2>
             <p class="font-secondary" style="font-size: 3.5vh; margin-top: 20px;">Search for buddies from your classes
                 page
-                and view their profiles for their contacts and availability.</p>
+                and view their profiles for their contacts.</p>
         </div>
     </div>
 </section>
@@ -68,35 +68,36 @@ include_once __DIR__ . '/navbar.php';
         of other students in your specific class. Connect with them to become<br>
         study buddies and find lasting connections.
     </p>
-    <div class="row align-items-center" style="width: 90vw; margin: auto; margin-bottom: 150px; ">
-        <div class="col">
-            <img src="../static/img/placeholder.png" style="width: 25vw; height: 35vh; border-radius: 10%;">
+    <div class="row align-items-center" style="margin: auto; margin-bottom: 150px; padding-left: 1vw; ">
+        <div class="col-4" style="">
+            <img src="../static/img/Edit.png" style="width: 25vw; height: 35vh; border-radius: 10%;">
             <h2 style="font-weight: 800; margin-top: 30px; margin-bottom: 40px; font-size: 5vh;">Profile Customization
             </h2>
             <p style="padding-left: 1vw; padding-right: 1vw; font-size: 3.4vh;">Add what makes you unique! Display your
                 Social Media handles so Buddies can
                 follow you!</p>
         </div>
-        <div class="col">
-            <img src="../static/img/placeholder.png" style="width: 25vw; height: 35vh; border-radius: 10%;">
-            <h2 style="font-weight: 800; margin-top: 30px;  margin-bottom: 40px; font-size: 5vh;">Class Browsing</h2>
+        <div class="col-4">
+            <img src="../static/img/Search.png" style="width: 25vw; height: 35vh; border-radius: 10%;">
+            <h2 style="font-weight: 800; margin-top: 30px;  margin-bottom: 40px; font-size: 5vh;">Class Search</h2>
             <p style="padding-left: 1vw; padding-right: 1vw; font-size: 3.4vh;"> Easily find the classes you're in from
                 our
                 database and view all the potential
                 buddies from that class!</p>
         </div>
-        <div class="col">
-            <img src="../static/img/placeholder.png" style="width: 25vw; height: 35vh; border-radius: 10%;">
+        <div class="col-4" style="">
+            <img src="../static/img/Classes.png" style="width: 25vw; height: 35vh; border-radius: 10%; padding-right: 1vw;">
             <h2 style="font-weight: 800; margin-top: 30px;  margin-bottom: 40px; font-size: 5vh;">Buddy Profiles</h2>
-            <p style="padding-left: 1vw; padding-right: 1vw; font-size: 3.4vh;">Get to know Buddies from their profiles
-                and availabilities and choose <em>your</em>
-                preferred method of contact.</p>
+            <p style="padding-left: 1vw; padding-right: 1vw; font-size: 3.4vh;">View the potential buddies from your
+                class and from their profile choose <em>your</em>
+                preferred contact method.</p>
         </div>
     </div>
 </div>
+
 <!--Fake Copyright section-->
 <div class="gradient-custom text-center font-copyright py-4">
-    © 2024 Study Buddy Northeastern.<br>
+    (fake copyright) 2024 Study Buddy Northeastern.<br>
     All rights reserved.
 </div>
 </body>
