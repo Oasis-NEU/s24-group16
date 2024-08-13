@@ -14,8 +14,9 @@ include_once __DIR__ . '/navbar.php';
 <div class="text-light gradient-custom font-primary row" style="height: 85vh;">
     <section class="align-content-center">
 
-    <div id="warningMsg" class="text-center"></div>
+        <div id="warningMsg" class="text-center"></div>
         <script src="./misc/warningMsg.js"></script>
+        <script src="./process/signupValidations.js"></script>
         <script>
             //Checks the url message and displays the appropriate message to the user.
             warn({
@@ -27,6 +28,7 @@ include_once __DIR__ . '/navbar.php';
                 'must match': "Passwords must match.",
                 'invalid email': "Email is not in the correct format."
             });
+            
         </script>
 
         
@@ -37,7 +39,8 @@ include_once __DIR__ . '/navbar.php';
                 <section style="color: black;">
                     <h1 class="mb-4 text-center" style="font-size: 6vh; margin-top: 5vh;">Create Account</h1>
                     <div style="width: 70%" class="container justify-content-center text-center">
-                        <form action="process/process-signup.php" method="post" id="signup" novalidate>
+                        <form onsubmit="return clientSideValidateSignup()" 
+                        action="process/process-signup.php" method="post" id="signup">
                             <div class="mb-3" style="margin-top: 5vh;">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email"
@@ -50,7 +53,7 @@ include_once __DIR__ . '/navbar.php';
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="password_confirmation"
+                                <input type="password" class="form-control" id="password-confirmation"
                                     name="password_confirmation" style="border-radius: 100px; height: 5vh;">
                             </div>
                             <button type="submit" class="btn btn-theme-orange text-center"
