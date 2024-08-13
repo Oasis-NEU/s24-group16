@@ -13,28 +13,23 @@ include_once __DIR__ . '/navbar.php';
 <!--The main page-->
 <div class="text-light gradient-custom font-primary row" style="height: 85vh;">
     <section class="align-content-center">
-        <?php
-        //Receives the URL message and displays the appropriate full message to the user.
-        if (isset($_GET['message'])) {
-            $message = htmlspecialchars($_GET['message']);
-            if ($message == 'no account') {
-                echoWarningMessage("You don't have an account with us. Create one today!");
-            } else if ($message == 'already existing') {
-                echoWarningMessage("You already have an account! Please <a href=\"Login.php\">Login</a>.");
-            } else if ($message == 'eight chars') {
-                echoWarningMessage("Password must be at least 8 characters.");
-            } else if ($message == 'one letter') {
-                echoWarningMessage("Password must contain at least one letter.");
-            } else if ($message == 'one number') {
-                echoWarningMessage("Password must contain at least one number.");
-            } else if ($message == 'must match') {
-                echoWarningMessage('Passwords must match.');
-            } else if ($message == 'invalid email') {
-                echoWarningMessage('Email is not in the correct format.');
-            }
-        }
-        ?>
 
+    <div id="warningMsg" class="text-center"></div>
+        <script src="./misc/warningMsg.js"></script>
+        <script>
+            //Checks the url message and displays the appropriate message to the user.
+            warn({
+                'no account': "You don't have an account with us. Create one today!",
+                'already existing': "You already have an account! Please <a href=\"Login.php\">Login</a>.",
+                'eight chars': "Password must be at least 8 characters.",
+                'one letter': "Password must contain at least one letter.",
+                'one number': "Password must contain at least one number.",
+                'must match': "Passwords must match.",
+                'invalid email': "Email is not in the correct format."
+            });
+        </script>
+
+        
         <!-- The signup area -->
         <div class="d-flex justify-content-center" style="width: 100vw;">
             <div class="justify-content-center" style="width: 30vw; height: 70vh; transform: translateX(12%); 
@@ -89,6 +84,4 @@ include_once __DIR__ . '/navbar.php';
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
-<script src="Login.js"></script>
-
 </html>

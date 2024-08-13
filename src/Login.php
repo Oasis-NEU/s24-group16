@@ -15,37 +15,11 @@ include_once __DIR__ . '/navbar.php';
     </section>
     <section class="text-center align-content-center">
         <div id="warningMsg"></div>
-
+        <script src="./misc/warningMsg.js"></script>
         <script>
-            function applyWarningMsgStyle() {
-                const warningStyle = document.getElementById("warningMsg").style;
-
-                warningStyle.color = 'black';
-                warningStyle.backgroundColor = 'white';
-                warningStyle.width = '40vw';
-                warningStyle.margin = 'auto';
-                warningStyle.paddingTop = '10px';
-                warningStyle.paddingBottom = '10px';
-                warningStyle.marginBottom = '30px';
-                warningStyle.borderRadius = '50px';
-                warningStyle.marginTop = '30px';
-            }
-
-    
-            //Receives the url message and displays the appropriate message to the user.
-            const queryParams = new URLSearchParams(window.location.search);
-            if (queryParams.get('message') == 'wrong password') {
-                applyWarningMsgStyle();
-                document.getElementById("warningMsg").innerText = "You have entered an invalid password. Please try again.";
-            }
+            //Checks the url message and displays the appropriate message to the user.
+            warn({"wrong password": "You have entered an invalid password. Please try again."});
         </script>
-
-        <!-- 
-         echo "<div class='text-center' style='color: black; background-color: white; width: 40vw; 
-         margin: auto; padding-top: 10px; padding-bottom: 10px; margin-bottom: 30px; border-radius: 50px; margin-top: 30px;'>
-         " . $text . "
-        </div>";
-        -->
 
         <!-- The main login area -->
         <div class="d-flex justify-content-center" style="">
