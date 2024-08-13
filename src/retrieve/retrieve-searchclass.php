@@ -11,7 +11,7 @@
  * @return void (echoes html)
  */
 function showSingleResult($class) {
-    echo "<form action=\"process/process-searchclass.php\" method=\"post\">";
+    echo "<form action=\"process/process-addclassbutton.php\" method=\"post\">";
     echo "<input name=\"class\" value=\" " 
     . $class['department_code'] 
     . " " 

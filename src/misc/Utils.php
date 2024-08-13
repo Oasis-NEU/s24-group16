@@ -13,7 +13,7 @@ function createSecureSession() {
         $_SESSION['last_regeneration'] = time();
     } else {
         $interval = 60 * 30;
-        if (time() - $_SESSION['last_regeneration'] >= interval) {
+        if (time() - $_SESSION['last_regeneration'] >= $interval) {
             session_regenerate_id(true);
             $_SESSION['last-regeneration'] = time();
         }
