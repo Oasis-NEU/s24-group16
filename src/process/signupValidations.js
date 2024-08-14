@@ -1,3 +1,6 @@
+/*
+A method that validates signup information from Signup.php
+*/
 function clientSideValidateSignup() {
     const email = document.getElementById('email').value;
     const password = document.getElementById("password").value;
@@ -36,7 +39,7 @@ function clientSideValidateSignup() {
         return false;
     }
 
-    if (password.equals !== password_confirmation) {
+    if (password !== password_confirmation) {
         window.location.href = invalidRedirect + "must+match&email=" + encodeURIComponent(email);
         return false;
     }

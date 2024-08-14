@@ -1,3 +1,6 @@
+/**
+ * Applies styles for a warning message on a div tag with the id "warningMsg"
+ */
 function applyWarningMsgStyle() {
     const warningStyle = document.getElementById("warningMsg").style;
 

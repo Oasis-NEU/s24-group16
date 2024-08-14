@@ -11,6 +11,8 @@
  * @return void (echoes html)
  */
 function showSingleResult($class) {
+
+    /*
     echo "<form action=\"process/process-addclassbutton.php\" method=\"post\">";
     echo "<input name=\"class\" value=\" " 
     . $class['department_code'] 
@@ -21,8 +23,15 @@ function showSingleResult($class) {
     echo "<label style='font-size: 20px; margin-bottom: 30px;' >" 
     . $class['department_code'] . " " . $class['department_number'] . " | " . $class["name"] . "</label>";
     echo "</form>";
+    */
+    echo "<script>showSingleResult('" 
+    .  $class['department_code'] . "', " 
+    . $class['department_number'] . ", '" 
+    . $class['name'] . "');</script>";
     
 }
+
+
 
 //If the name of the class was searched for and not empty
 if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
@@ -41,15 +50,6 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
 
     $stmt->bind_param("s", $search);
 
-    //runs the command
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    //While there is information in the result (loops through the information)
-    while ($row = $result->fetch_assoc()) {
-        showSingleResult($row);
-    }
-
     //if both the search code and number were searched for and not empty
 } else if (isset($_POST["search-code"]) && $_POST["search-code"] != "" 
 && isset($_POST["search-number"]) && $_POST["search-number"] != "") {
@@ -66,15 +66,6 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     }
 
     $stmt->bind_param("ss", $_POST["search-code"], $_POST["search-number"]);
-
-    //runs the command
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    //While there is information in the result (loops through the information)
-    while ($row = $result->fetch_assoc()) {
-        showSingleResult($row);
-    }
 
     //if the search code was the only input
 } else if (isset($_POST["search-code"]) && $_POST["search-code"] != "" 
@@ -93,16 +84,6 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
 
     $stmt->bind_param("s", $_POST["search-code"]);
 
-    //runs the command
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    //While there is information in the result (loops through the information)
-    $count = 0;
-    while ($row = $result->fetch_assoc()) {
-        showSingleResult($row);
-    }
-
     //if the search number was the only input
 } else if (isset($_POST["search-code"]) && $_POST["search-code"] == "" 
 && isset($_POST["search-number"]) && $_POST["search-number"] != "") {
@@ -119,13 +100,23 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     }
 
     $stmt->bind_param("s", $_POST["search-number"]);
+} 
 
-    //runs the command
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    //While there is information in the result (loops through the information)
-    while ($row = $result->fetch_assoc()) {
-        showSingleResult($row);
-    }
+if (isset($stmt)) {
+     //runs the command
+     $stmt->execute();
+     $result = $stmt->get_result();
+ 
+     $noResult = true;
+     //While there is information in the result (loops through the information)
+     while ($row = $result->fetch_assoc()) {
+        if ($noResult) {
+            $noResult = false;
+        }
+         showSingleResult($row);
+     }
+ 
+     if ($noResult) {
+        echo "<script>document.getElementById('noresults').style.visibility = 'visible';</script>";
+     }
 }

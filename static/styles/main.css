@@ -16,6 +16,16 @@
   font-style: normal;
 }
 
+.add-class-btn {
+  margin-right: 20px; 
+  border-radius: 100px;
+}
+
+.add-class-label {
+  font-size: 20px; 
+  margin-bottom: 30px;
+}
+
 
 
 /*!
@@ -12057,3 +12067,4 @@ textarea.form-control-lg {
   font-weight: 400; 
   font-size: 3vh;
 }
+
