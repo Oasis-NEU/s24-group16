@@ -7,7 +7,7 @@ session_start();
 include_once __DIR__ . '/navbar.php';
 ?>
 <script src="./process/preprocess-search.js"></script>
-<script src="./retrieve/displaySearch.js"></script>
+<script src="./display/displaySearch.js"></script>
 
 <!-- The main content of the page-->
 <div style="background-color: #F7FF9A; padding-bottom: 24vh;" class="d-flex justify-content-center">

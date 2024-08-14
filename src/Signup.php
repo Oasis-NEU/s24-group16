@@ -15,7 +15,7 @@ include_once __DIR__ . '/navbar.php';
     <section class="align-content-center">
 
         <div id="warningMsg" class="text-center"></div>
-        <script src="./misc/warningMsg.js"></script>
+        <script src="./display/warningMsg.js"></script>
         <script src="./process/signupValidations.js"></script>
         <script>
             //Checks the url message and displays the appropriate message to the user.
