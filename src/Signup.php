@@ -45,6 +45,10 @@ include_once __DIR__ . '/navbar.php';
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email"
                                     aria-describedby="emailHelp" style="border-radius: 100px; height: 5vh;">
+                                <script> 
+                                document.getElementById('email').value = 
+                                 new URLSearchParams(window.location.search).get('email');
+                                </script>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>

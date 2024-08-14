@@ -19,7 +19,7 @@ include_once __DIR__ . '/navbar.php';
         <script>
             //Checks the url message and displays the appropriate message to the user.
             warn({"wrong password": "You have entered an invalid password. Please try again.",
-                "no account": "You don't have an account, please <a href='Signup.php'>Sign up</a>!"
+                "no account": "You don't have an account, please <a href='Signup.php'>Sign p</a>!"
             });
         </script>
 
