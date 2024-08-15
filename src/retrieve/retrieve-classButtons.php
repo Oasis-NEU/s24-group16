@@ -46,13 +46,7 @@ if (isset($row["classes"])) {
      */
     function echoButton($vals)
     { 
-        echo "<form method=\"post\">";
-        echo "<button type=\"submit\" class=\"mt-4 btn py-3\" style=\"background-color: white; border-radius: 25px; width: 10vw;\">";
-        echo $vals[0] . " " . $vals[1];
-        echo "</button>";
-        echo "<input name=\"department_code\" value=\"" . $vals[0] . "\" type=\"hidden\">";
-        echo "<input name=\"department_number\" value=\"" . $vals[1] . "\" type=\"hidden\">";
-        echo "</form>";
+        echo "<script>echoClassButton('" . $vals[0] . "', '" . $vals[1] . "');</script>";
     }
 
     $classesArray = explode(",", $classes);

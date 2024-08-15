@@ -26,6 +26,24 @@
   margin-bottom: 30px;
 }
 
+.view-class-btn {
+  background-color: white; 
+  border-radius: 25px; 
+  width: 10vw;
+}
+
+.view-class-info {
+  background-color: white; 
+  width: 80%; 
+  border-radius: 50px; 
+  padding-top:8vh; 
+  padding-bottom: 8vh; 
+  margin-top: 5vh; 
+  margin-bottom: 5vh;
+  padding-left: 10vh; 
+  padding-right: 10vh;
+}
+
 
 
 /*!

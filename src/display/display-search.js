@@ -27,7 +27,7 @@ function showSingleResult(department_code, department_number, name) {
     form.appendChild(button);
     form.appendChild(label);
 
-    document.getElementById('results').appendChild(form);
+    document.getElementById('class-buttons').appendChild(form);
 
 
 

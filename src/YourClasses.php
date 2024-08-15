@@ -9,9 +9,9 @@ include_once __DIR__ . '/navbar.php';
 <!--Content-->
 <section class="d-flex" style="width: 100vw; flex-grow: 1; flex-shrink: 0;">
     <!-- Class buttons section, aka shows all the classes you have and lets you click on them to view them here -->
-    <div class="d-flex py-3 flex-column" style="background-color: #FEAD76; width: 15vw; 
+    <div id="class-buttons" class="d-flex py-3 flex-column" style="background-color: #FEAD76; width: 15vw; 
             padding-left: 2vw; padding-right: 2vw; padding-bottom: 6vh;">
-
+        <script src="./display/display-classButton.js"></script>
         <?php include "retrieve/retrieve-classButtons.php"; ?>
 
     </div>
@@ -20,7 +20,7 @@ include_once __DIR__ . '/navbar.php';
      Is set to the first class by default or informs the user that they have no classes and should add one.-->
     <div class="flex-column d-flex align-items-center justify-content-center"
         style="background-color: #E37D37; width: 85vw;">
-
+        
         <?php include "retrieve/retrieve-classInfo.php"; ?>
         
     </div>
