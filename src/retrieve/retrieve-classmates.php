@@ -36,9 +36,10 @@ $result = $stmt->get_result();
 
 $row = $result->fetch_assoc();
 
-echo "<a href=\"ViewProfile.php?profile=" . base64_encode($email) . "\">";
-echo "<p style=\"margin-left:2vw;\">" . $row["first_name"] . " " . $row["last_name"] .  "</p>";
-echo "</a>";
+echo "<script>displayClassmate('" 
+. base64_encode($email) . "', '" 
+. $row["first_name"] . "', '" 
+. $row["last_name"]  . "');</script>";
 
 }
 
@@ -58,5 +59,5 @@ if (isset($row)) {
 }
 
 if (!$hasClassmates) {
-    echo "<p>Oh no! There are no classmates using Study Buddy in your class: try reaching out to your professor to introduce more of your classmates to this platform!</p>";
+    echo "<script>displayNoClassmates();</script>";
 }

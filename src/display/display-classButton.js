@@ -1,8 +1,8 @@
 /**
  * Creates html elements with the department code and number for a 
  * class button (button that displays department_code and department_number)
- * @param {*} department_code 
- * @param {*} department_number 
+ * @param {*} department_code the class' department_code to display
+ * @param {*} department_number the class' department_number to display
  */
 function echoClassButton(department_code, department_number) {
     let form = document.createElement('form');
@@ -11,7 +11,8 @@ function echoClassButton(department_code, department_number) {
 
     let button = document.createElement('button');
     button.type = 'submit';
-    button.classList = 'mt-4 btn py-3 view-class-btn';
+    button.classList = 'mt-4 btn py-3';
+    button.style = 'background-color: white; border-radius: 25px; width: 10vw;';
     button.innerText = department_code + " " + department_number;
 
     let codeInput = document.createElement('input');
@@ -28,6 +29,6 @@ function echoClassButton(department_code, department_number) {
     form.appendChild(codeInput);
     form.appendChild(numInput);
 
-    document.getElementById('class-buttons').append(form);
+    document.getElementById('class-buttons').appendChild(form);
 
 }

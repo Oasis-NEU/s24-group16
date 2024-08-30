@@ -20,8 +20,12 @@ include_once __DIR__ . '/navbar.php';
      Is set to the first class by default or informs the user that they have no classes and should add one.-->
     <div class="flex-column d-flex align-items-center justify-content-center"
         style="background-color: #E37D37; width: 85vw;">
-        
+        <script src="./display/display-classInfo.js"></script>
+        <script src="./display/display-classButton.js"></script>
+        <script src="./display/display-classmate.js"></script>
+        <div class="view-class-info" id ="view-class">
         <?php include "retrieve/retrieve-classInfo.php"; ?>
+        </div>
         
     </div>
 

@@ -7,7 +7,7 @@ session_start();
 include_once __DIR__ . '/navbar.php';
 ?>
 <script src="./process/preprocess-search.js"></script>
-<script src="./display/displaySearch.js"></script>
+<script src="./display/display-search.js"></script>
 
 <!-- The main content of the page-->
 <div style="background-color: #F7FF9A; padding-bottom: 24vh;" class="d-flex justify-content-center">
@@ -46,11 +46,10 @@ include_once __DIR__ . '/navbar.php';
             <h3 id="no-results" style="visibility: hidden">There were no results.</h3>
 
                 <div id="results">
-                    <?php
-                    include 'retrieve/retrieve-searchclass.php';
-                    ?>
                 </div>
-
+                <?php
+                    include 'retrieve/retrieve-searchclass.php';
+                ?>
             </div>
             </div>
         </div>

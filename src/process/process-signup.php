@@ -14,6 +14,7 @@ Creates the profile with the password and email using SQL then redirects to Edit
 <?php
 
 echo "<script>console.log('php');</script>";
+
 //require executes database.php
 $mysqli = require __DIR__ . "/../database/database.php";
 
@@ -47,28 +48,6 @@ if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     header($invalidRedirect . "invalid+email");
     exit;
 }
-
-/*
-//Other checks
-if (strlen($_POST["password"]) < 8) {
-    header($invalidRedirect . "eight+chars");
-    exit;
-}
-
-if (!preg_match("/[a-z]/i", $_POST["password"])) {
-    header($invalidRedirect . "one+letter");
-    exit;
-}
-
-if (!preg_match("/[0-9]/i", $_POST["password"])) {
-    header($invalidRedirect . "one+number");
-    exit;
-}
-
-if ($_POST["password"] !== $_POST["password_confirmation"]) {
-    header($invalidRedirect . "must+match");
-    exit;
-}*/
 
 //creates a password hash
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);

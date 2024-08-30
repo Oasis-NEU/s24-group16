@@ -1,3 +1,9 @@
+/**
+ * Creates HTML elements to show a single search result
+ * @param {*} department_code 
+ * @param {*} department_number 
+ * @param {*} name 
+ */
 function showSingleResult(department_code, department_number, name) {
     let form = document.createElement('form');
     form.action = 'process/process-addclassbutton.php';
@@ -27,7 +33,7 @@ function showSingleResult(department_code, department_number, name) {
     form.appendChild(button);
     form.appendChild(label);
 
-    document.getElementById('class-buttons').appendChild(form);
+    document.getElementById('results').appendChild(form);
 
 
 

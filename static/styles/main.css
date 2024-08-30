@@ -44,6 +44,27 @@
   padding-right: 10vh;
 }
 
+.class-info-no-class {
+  background-color: white; 
+  width: 80%; 
+  border-radius: 50px; 
+  padding-top:8vh; 
+  padding-bottom: 8vh; 
+  margin-top: 5vh; 
+  margin-bottom: 5vh; 
+  height: 72vh;
+}
+
+.view-class-no-classes {
+  background-color: white; 
+  width: 80%; 
+  border-radius: 50px; 
+  padding-top:8vh; 
+  padding-bottom: 8vh; 
+  margin-top: 5vh; 
+  margin-bottom: 5vh; 
+  height: 72vh;
+}
 
 
 /*!
