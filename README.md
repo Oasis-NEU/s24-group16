@@ -8,7 +8,10 @@ By allowing you to specify regularly used contact methods on your profile as a v
 You also save time by specifying your availability, what you want in a study buddy, grade, year, and interests on your profile which buddies view before messaging you. 
 
 ## Demo
-https://youtu.be/jW2umXdV-qs
+https://youtu.be/jW2umXdV-qs 
+
+## Code Overview (pre-Javascript overhaul)
+https://youtu.be/MZC5IGTHFhk
 
 ## Functionality
 User sign-up and login. 
