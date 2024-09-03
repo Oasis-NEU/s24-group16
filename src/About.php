@@ -43,17 +43,17 @@ include_once __DIR__ . '/navbar.php';
             <h1 style="font-weight: 800; margin-top:110px;">How It Works</h1>
 
             <h2 style="font-weight: 800; margin-top:10vh; font-size: 28px;">Create Your Profile</h2>
-            <p class="font-secondary" style="font-size: 3.5vh; margin-top: 20px;">Add your hobbies, social media,
+            <p class="font-secondary" style="font-size: 3vh; margin-top: 20px;">Add your hobbies, social media,
                 availability,
                 and what you're looking for in a Studdy Buddy.</p>
 
             <h2 style="font-weight: 800; margin-top:40px; font-size: 28px;">Search and Add Classes</h2>
-            <p class="font-secondary" style="font-size: 3.5vh; margin-top: 20px;">Search our extensive database, add
+            <p class="font-secondary" style="font-size: 3vh; margin-top: 20px;">Search our extensive database, add
                 your classes
                 to your app so you can view tons of potential buddies!</p>
 
             <h2 style="font-weight: 800; margin-top:40px; font-size: 28px;">Connect With Buddies</h2>
-            <p class="font-secondary" style="font-size: 3.5vh; margin-top: 20px;">Search for buddies from your classes
+            <p class="font-secondary" style="font-size: 3vh; margin-top: 20px;">Search for buddies from your classes
                 page
                 and view their profiles for their contacts.</p>
         </div>
