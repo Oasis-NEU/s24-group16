@@ -11,25 +11,38 @@
  * @return void (echoes html)
  */
 function showSingleResult($class) {
-
-    /*
-    echo "<form action=\"process/process-addclassbutton.php\" method=\"post\">";
-    echo "<input name=\"class\" value=\" " 
-    . $class['department_code'] 
-    . " " 
-    . $class['department_number'] 
-    . "\" type=\"hidden\"></input>";
-    echo "<button class='btn btn-theme-orange' style='margin-right: 20px; border-radius: 100px;'>Add</button>";
-    echo "<label style='font-size: 20px; margin-bottom: 30px;' >" 
-    . $class['department_code'] . " " . $class['department_number'] . " | " . $class["name"] . "</label>";
-    echo "</form>";
-    */
     echo "<script>showSingleResult('" 
     .  $class['department_code'] . "', " 
     . $class['department_number'] . ", '" 
     . $class['name'] . "');</script>";
     
 }
+
+/**
+ * Loops back with the user to inform them that there were no search results.
+ */
+function displayNoResult() {
+    echo "<script>displayNoResult();</script>";
+}
+
+/**
+ * Displays to the user the value of one search param that was entered into a search.
+ * @param string The actual value of one search param
+ * @param string The name of the search param
+ */
+function displayOneSearchParam($searchValue, $searchName) {
+    echo "<script>displayOneSearchParam(" + $searchValue + "," + $searchName + ")</script>";
+}
+
+/**
+ * Displays to the user the value of two search params, specifically searchCode and searchNumber
+ * @param string the value of the search code
+ * @param string the value of the search number
+ */
+function displayTwoSearchParams($searchCode, $searchNumber) {
+    echo "<script>displayTwoSearchParams(" + $searchCode + "," + $searchNumber + ")</script>";
+}
+
 
 
 
@@ -117,6 +130,6 @@ if (isset($stmt)) {
      }
  
      if ($noResult) {
-        echo "<script>document.getElementById('noresults').style.visibility = 'visible';</script>";
+        displayNoResult();
      }
 }

@@ -12,6 +12,10 @@ function preprocessSearch() {
     const noResults = document.getElementById('no-results');
     const results = document.getElementById('results');
 
+    let url = new URL(window.location.href);
+    url.searchParams.append('param', 'val');
+    window.location.assign(url);
+    
 
     if (name === "" && number === "" && code === "") {
         searchStatus.innerText = '(Search made with blank values)';
@@ -47,5 +51,7 @@ function preprocessSearch() {
     }
 
     results.style.visibility = 'hidden';
+
+    
 
 }

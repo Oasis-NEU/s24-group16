@@ -8,6 +8,7 @@ function showSingleResult(department_code, department_number, name) {
     let form = document.createElement('form');
     form.action = 'process/process-addclassbutton.php';
     form.method = 'post';
+    form.style = 'margin-top: 20px';
 
 
 
@@ -34,7 +35,32 @@ function showSingleResult(department_code, department_number, name) {
     form.appendChild(label);
 
     document.getElementById('results').appendChild(form);
+}
 
+/**
+ * Changes the visibility of an html element to inform the user that there were no results
+ */
+function displayNoResult() {
+    let noResults = document.getElementById('no-results');
+    noResults.style.visibility = "visible";
+}
 
+/**
+ * Displays to the user the value of one search param that was entered into a search.
+ * @param {} searchValue The actual value of one search param
+ * @param {*} searchName The name of the search param
+ */
+function displayOneSearchParam(searchValue, searchName) {
+    const searchStatus = document.getElementById('search-status');
+    searchStatus.innerText = '(Search made with '+ searchName + ' "' + searchValue + '")'; 
+}
 
+/**
+ * Displays to the user the value of two search params, specifically searchCode and searchNumber
+ * @param {*} searchCode the value of the search code
+ * @param {*} searchNumber the value of the search number
+ */
+function displayTwoSearchParams(searchCode, searchNumber) {
+    const searchStatus = document.getElementById('search-status');
+    searchStatus.innerText = '(Search made with search code "' + searchCode + '" and search number "' + searchNumber + '")'; 
 }

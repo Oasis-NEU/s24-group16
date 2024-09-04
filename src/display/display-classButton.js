@@ -11,8 +11,8 @@ function echoClassButton(department_code, department_number) {
 
     let button = document.createElement('button');
     button.type = 'submit';
-    button.classList = 'mt-4 btn py-3';
-    button.style = 'background-color: white; border-radius: 25px; width: 10vw;';
+    button.classList = 'mt-4 btn py-3 view-class-btn';
+    button.style = '';
     button.innerText = department_code + " " + department_number;
 
     let codeInput = document.createElement('input');

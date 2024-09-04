@@ -18,14 +18,14 @@ include_once __DIR__ . '/navbar.php';
         <form onsubmit= "return preprocessSearch();" method="post" id="searchclass" class="row">
 
             <div class="col-5 text-center">
-            <label style="font-size: 3vh; margin-bottom: 10px;">Search classes by name</label>
+            <label style="font-size: 2.5vh; margin-bottom: 10px;">Search classes by name</label>
             <br>
             <input type="text" name="search-name" id="search-name" 
             placeholder="Name..." style="border-radius: 100px; height: 40px;">
             <button class="btn btn-theme-orange" style="border-radius: 100px; height: 40px;">Search</button>
             </div>
             <div class="col-7 text-center">
-            <label style="font-size: 3vh; margin-bottom: 10px;">Search by department code and/ or course number</label>
+            <label style="font-size: 2.5vh; margin-bottom: 10px;">Search by department code and/ or course number</label>
             <br>
             <input type="text" name="search-code" id="search-code" 
             placeholder="Code..." style="border-radius: 100px; height: 40px;">

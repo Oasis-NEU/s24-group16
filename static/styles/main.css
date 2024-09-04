@@ -16,55 +16,7 @@
   font-style: normal;
 }
 
-.add-class-btn {
-  margin-right: 20px; 
-  border-radius: 100px;
-}
 
-.add-class-label {
-  font-size: 20px; 
-  margin-bottom: 30px;
-}
-
-.view-class-btn {
-  background-color: white; 
-  border-radius: 25px; 
-  width: 10vw;
-}
-
-.view-class-info {
-  background-color: white; 
-  width: 80%; 
-  border-radius: 50px; 
-  padding-top:8vh; 
-  padding-bottom: 8vh; 
-  margin-top: 5vh; 
-  margin-bottom: 5vh;
-  padding-left: 10vh; 
-  padding-right: 10vh;
-}
-
-.class-info-no-class {
-  background-color: white; 
-  width: 80%; 
-  border-radius: 50px; 
-  padding-top:8vh; 
-  padding-bottom: 8vh; 
-  margin-top: 5vh; 
-  margin-bottom: 5vh; 
-  height: 72vh;
-}
-
-.view-class-no-classes {
-  background-color: white; 
-  width: 80%; 
-  border-radius: 50px; 
-  padding-top:8vh; 
-  padding-bottom: 8vh; 
-  margin-top: 5vh; 
-  margin-bottom: 5vh; 
-  height: 72vh;
-}
 
 
 /*!
@@ -12107,3 +12059,52 @@ textarea.form-control-lg {
   font-size: 3vh;
 }
 
+.add-class-btn {
+  margin-right: 20px; 
+  border-radius: 100px;
+}
+
+.add-class-label {
+  font-size: 20px; 
+  margin-bottom: 30px;
+}
+
+.view-class-btn {
+  background-color: white; 
+  border-radius: 25px; 
+  width: 10vw;
+}
+
+.view-class-info {
+  background-color: white; 
+  width: 80%; 
+  border-radius: 50px; 
+  padding-top:8vh; 
+  padding-bottom: 8vh; 
+  margin-top: 5vh; 
+  margin-bottom: 5vh;
+  padding-left: 10vh; 
+  padding-right: 10vh;
+}
+
+.class-info-no-class {
+  background-color: white; 
+  width: 80%; 
+  border-radius: 50px; 
+  padding-top:8vh; 
+  padding-bottom: 8vh; 
+  margin-top: 5vh; 
+  margin-bottom: 5vh; 
+  height: 72vh;
+}
+
+.view-class-no-classes {
+  background-color: white; 
+  width: 80%; 
+  border-radius: 50px; 
+  padding-top:8vh; 
+  padding-bottom: 8vh; 
+  margin-top: 5vh; 
+  margin-bottom: 5vh; 
+  height: 72vh;
+}

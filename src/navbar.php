@@ -8,6 +8,7 @@
         Study Buddy Networking App
     </title>
     <link href="../static/styles/main.css" rel="stylesheet">
+    <link href="../static/styles/custom.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap');
