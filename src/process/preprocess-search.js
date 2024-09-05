@@ -11,10 +11,6 @@ function preprocessSearch() {
     const searchStatus = document.getElementById('search-status');
     const noResults = document.getElementById('no-results');
     const results = document.getElementById('results');
-
-    let url = new URL(window.location.href);
-    url.searchParams.append('param', 'val');
-    window.location.assign(url);
     
 
     if (name === "" && number === "" && code === "") {
@@ -23,20 +19,6 @@ function preprocessSearch() {
         results.innerHTML = '';
         return false;
     }
-
-    let searchStatusBuild = '(Search made with "';
-    if (name !== "") {
-        searchStatusBuild += 'name "' + name + '")';
-    } else if (number !== '' && code !== ''){
-        searchStatusBuild += 'course code "' + code + '" and number "' + number + '")';
-    } else if (number !== '') {
-        searchStatusBuild += 'course number "' + number + '")';
-    } else {
-        searchStatusBuild += 'course code "' + code + '")';
-    }
-
-    searchStatus.innerText = searchStatusBuild;
-
 
     if (number > 999 || number < 0) {
         noResults.style.visibility = 'visible';
@@ -51,7 +33,6 @@ function preprocessSearch() {
     }
 
     results.style.visibility = 'hidden';
-
     
 
 }

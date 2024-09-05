@@ -31,7 +31,7 @@ function displayNoResult() {
  * @param string The name of the search param
  */
 function displayOneSearchParam($searchValue, $searchName) {
-    echo "<script>displayOneSearchParam(" + $searchValue + "," + $searchName + ")</script>";
+    echo "<script>displayOneSearchParam('" . $searchValue . "', '" . $searchName . "');</script>";
 }
 
 /**
@@ -40,7 +40,7 @@ function displayOneSearchParam($searchValue, $searchName) {
  * @param string the value of the search number
  */
 function displayTwoSearchParams($searchCode, $searchNumber) {
-    echo "<script>displayTwoSearchParams(" + $searchCode + "," + $searchNumber + ")</script>";
+    echo "<script>displayTwoSearchParams('" . $searchCode . "', '" . $searchNumber . "');</script>";
 }
 
 
@@ -63,6 +63,8 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
 
     $stmt->bind_param("s", $search);
 
+    displayOneSearchParam($_POST["search-name"], "search name");
+
     //if both the search code and number were searched for and not empty
 } else if (isset($_POST["search-code"]) && $_POST["search-code"] != "" 
 && isset($_POST["search-number"]) && $_POST["search-number"] != "") {
@@ -79,6 +81,8 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     }
 
     $stmt->bind_param("ss", $_POST["search-code"], $_POST["search-number"]);
+
+    displayTwoSearchParams($_POST["search-code"], $_POST["search-number"]);
 
     //if the search code was the only input
 } else if (isset($_POST["search-code"]) && $_POST["search-code"] != "" 
@@ -97,6 +101,8 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
 
     $stmt->bind_param("s", $_POST["search-code"]);
 
+    displayOneSearchParam($_POST["search-code"], "search code");
+
     //if the search number was the only input
 } else if (isset($_POST["search-code"]) && $_POST["search-code"] == "" 
 && isset($_POST["search-number"]) && $_POST["search-number"] != "") {
@@ -113,6 +119,8 @@ if (isset($_POST["search-name"]) && $_POST["search-name"] != "") {
     }
 
     $stmt->bind_param("s", $_POST["search-number"]);
+
+    displayOneSearchParam($_POST["search-number"], "search number");
 } 
 
 if (isset($stmt)) {
@@ -132,4 +140,5 @@ if (isset($stmt)) {
      if ($noResult) {
         displayNoResult();
      }
+
 }
