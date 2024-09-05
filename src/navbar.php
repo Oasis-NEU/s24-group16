@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body class = "d-flex flex-column" style="overflow-x: hidden;">
+<body id="body" class = "d-flex flex-column" style="overflow-x: hidden; min-height: 100vh;">
     <!-- Navbar -->
     <nav class="row navbar navbar-expand-sm" style="width: 100%; padding-top: 4vh; padding-bottom: 4vh; background-color: #FFFFFF;">
         <div class="container font-secondary">

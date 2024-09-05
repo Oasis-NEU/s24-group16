@@ -10,7 +10,7 @@ include_once __DIR__ . '/navbar.php';
 <script src="./display/display-search.js"></script>
 
 <!-- The main content of the page-->
-<div style="background-color: #F7FF9A; padding-bottom: 24vh;" class="d-flex justify-content-center">
+<div style="background-color: #F7FF9A; padding-bottom: 10vh;  flex-grow: 1; flex-shrink: 0;" class="d-flex justify-content-center">
     <div class="flex-column">
         <!-- The search input box -->
         <div style="background-color: white; width: 70vw; 
@@ -41,7 +41,7 @@ include_once __DIR__ . '/navbar.php';
         <div class="d-flex" style="background-color: white; width: 70vw; border-radius: 100px; margin-top: 8vh;">
             <div style= "padding-left: 70px; padding-top: 50px;">
             <div id="search-status" style="margin-bottom: 30px;"></div>
-            <h2 style="margin-bottom: 50px;">Results:</h2>
+            <h2 style="margin-bottom: 25px;">Results:</h2>
             <div style="margin-bottom: 50px;">
             <h3 id="no-results" style="visibility: hidden">There were no results.</h3>
 

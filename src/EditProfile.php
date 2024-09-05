@@ -8,7 +8,7 @@ include_once __DIR__ . '/navbar.php';
 ?>
 
 <!-- Them main content -->
-<div class=" text-light" style="height: 85vh; background-color: #86DBFF; position: relative;">
+<div class=" text-light" style="background-color: #86DBFF; position: relative; flex-grow: 1; flex-shrink: 0;">
     <form action="process/process-editprofile.php" method="post" id="profile" novalidate>
 
         <!-- The first white display section, containing first name, last name, year, and major-->
