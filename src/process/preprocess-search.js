@@ -20,7 +20,7 @@ function preprocessSearch() {
         return false;
     }
 
-    if (number > 999 || number < 0) {
+    if (number > 9999 || number < 0) {
         noResults.style.visibility = 'visible';
         results.innerHTML = '';
         return false;

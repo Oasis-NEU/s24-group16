@@ -15,7 +15,7 @@ include_once __DIR__ . '/navbar.php';
     </section>
     <section class="text-center align-content-center">
         <div id="warningMsg"></div>
-        <script src="./misc/display-warningMsg.js"></script>
+        <script src="./display/display-warningMsg.js"></script>
         <script>
             //Checks the url message and displays the appropriate message to the user.
             warn({"wrong password": "You have entered an invalid password. Please try again.",

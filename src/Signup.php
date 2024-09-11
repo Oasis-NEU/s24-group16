@@ -74,13 +74,13 @@ include_once __DIR__ . '/navbar.php';
                     Why Study Buddy
                     <br> Networking?
                 </h2>
-                <p style="font-weight: 100; font-size: 3.6vh; margin-top: 10%;">
+                <p style="font-weight: 100; font-size: 3.3vh; margin-top: 10%;">
                     Find buddies from your<br>school and your class
                 </p>
-                <p style="font-weight: 100; font-size: 3.6vh;">
+                <p style="font-weight: 100; font-size: 3.3vh;">
                     Communicate through<br>your preferred methods
                 </p>
-                <p style="font-weight: 100; font-size: 3.6vh;">
+                <p style="font-weight: 100; font-size: 3.3vh;">
                     Increase your<br>networking presence
                 </p>
             </div>
