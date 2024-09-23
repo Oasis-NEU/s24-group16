@@ -10,8 +10,8 @@ You also save time by specifying your availability, what you want in a study bud
 ## Demo
 https://youtu.be/jW2umXdV-qs 
 
-## Code Overview (pre-Javascript overhaul)
-https://youtu.be/MZC5IGTHFhk
+## Code Overview
+https://youtu.be/UOTxTe2UXdA
 
 ## Functionality
 User sign-up and login. 
